@@ -44,14 +44,14 @@ library(ggplot2)
 rest_sentiment_portion = data.frame(City = rest_sentiment$City, n = rest_sentiment$n / rest_count[1:31,]$n) %>%
   arrange(desc(n))
 rest_sentiment_portion$City <- factor(rest_sentiment_portion$City,
-                                      levels = order(rest_sentiment_portion$n))
+                                      levels = rest_sentiment_portion$City[order(rest_sentiment_portion$n)])
 
 
 ggplot(rest_sentiment_portion, aes(x=City, y=n))+
   geom_point(color="red")+
   theme_minimal()+
   ylab("Percentage of Positive Words in diff cities")+
-  xlab("id")+
+  xlab("Cities")+
   theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 rest_rating = rest %>%
@@ -59,3 +59,12 @@ rest_rating = rest %>%
   group_by(City) %>%
   summarise(average_rating = mean(Rating)) %>%
   arrange(desc(average_rating))
+rest_rating$City <- factor(rest_rating$City,
+                           levels = rest_sentiment_portion$City[order(rest_sentiment_portion$n)])
+
+ggplot(rest_rating, aes(x=City, y=average_rating))+
+  geom_point(color="blue")+
+  theme_minimal()+
+  ylab("Ratings in diff cities")+
+  xlab("Cities")+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
