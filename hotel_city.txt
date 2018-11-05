@@ -785,17 +785,17 @@ Albany Street London NW1 3UP United Kingdom, London
 Albert Cuypstraat 2 6 Oud Zuid 1072 CT Amsterdam Netherlands, Amsterdam
 Aldwych Westminster Borough London WC2B 4DD United Kingdom, London
 Aletta Jacobslaan 7 Slotervaart 1066 BP Amsterdam Netherlands, Amsterdam
-Althanstra e 5 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Althanstra e 5 09 Alsergrund 1090 Vienna Austria, Vienna
 Alzaia Naviglio Grande 8 Navigli 20144 Milan Italy, Milano
-Am Heumarkt 35 37 03 Landstra e 1030 Vienna Austria, Landstraße
-Am Hof 2 01 Innere Stadt 1010 Vienna Austria, Wien
-Am Stadtpark 1 03 Landstra e 1030 Vienna Austria, Landstraße
+Am Heumarkt 35 37 03 Landstra e 1030 Vienna Austria, Vienna
+Am Hof 2 01 Innere Stadt 1010 Vienna Austria, Vienna
+Am Stadtpark 1 03 Landstra e 1030 Vienna Austria, Vienna
 Ample 1 Pla a Duc de Medinaceli Ciutat Vella 08002 Barcelona Spain, Barcelona
 Amstelstraat 17 Amsterdam City Center 1017 DA Amsterdam Netherlands, Amsterdam
 Angli 60 Sarri St Gervasi 08017 Barcelona Spain, Barcelona
 Anna van den Vondelstraat 6 Oud West 1054 GZ Amsterdam Netherlands, Amsterdam
-Annagasse 16 01 Innere Stadt 1010 Vienna Austria, Wien
-Annagasse 7 01 Innere Stadt 1010 Vienna Austria, Wien
+Annagasse 16 01 Innere Stadt 1010 Vienna Austria, Vienna
+Annagasse 7 01 Innere Stadt 1010 Vienna Austria, Vienna
 Apollolaan 101 105 Oud Zuid 1077 AN Amsterdam Netherlands, Amsterdam
 Apollolaan 123 125 Oud Zuid 1077 AP Amsterdam Netherlands, Amsterdam
 Apollolaan 138 Oud Zuid 1077 BG Amsterdam Netherlands, Amsterdam
@@ -805,8 +805,8 @@ Arend Janszoon Ernststraat 577 Zuideramstel 1082 LD Amsterdam Netherlands, Amste
 Aribau 33 Eixample 08011 Barcelona Spain, Barcelona
 Aribau 54 Eixample 08011 Barcelona Spain, Barcelona
 Arlandaweg 10 Westpoort 1043 EW Amsterdam Netherlands, Amsterdam
-Aspernbr ckengasse 1 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
-Auerspergstra e 9 08 Josefstadt 1080 Vienna Austria, Josefstadt
+Aspernbr ckengasse 1 02 Leopoldstadt 1020 Vienna Austria, Vienna
+Auerspergstra e 9 08 Josefstadt 1080 Vienna Austria, Vienna
 Ausi s Marc 34 Eixample 08010 Barcelona Spain, Barcelona
 Avenida Bogatell 64 68 Sant Mart 08005 Barcelona Spain, Barcelona
 Avenida Diagonal 1 Sant Mart 08019 Barcelona Spain, Barcelona
@@ -839,7 +839,7 @@ Balmes 103 105 Eixample 08008 Barcelona Spain, Barcelona
 Balmes 117 Eixample 08008 Barcelona Spain, Barcelona
 Balmes 142 146 Eixample 08008 Barcelona Spain, Barcelona
 Basil Street Knightsbridge Kensington and Chelsea London SW3 1AT United Kingdom, London
-Baumgasse 83 03 Landstra e 1030 Vienna Austria, Landstraße
+Baumgasse 83 03 Landstra e 1030 Vienna Austria, Vienna
 Belgrove Street Camden London WC1H 8AB United Kingdom, London
 Bellamyplein 47 Oud West 1053 AT Amsterdam Netherlands, Amsterdam
 Beltran i R zpide 7 9 Les Corts 08034 Barcelona Spain, Barcelona
@@ -848,15 +848,15 @@ Bergara 2 4 Eixample 08002 Barcelona Spain, Barcelona
 Bergara 8 Eixample 08002 Barcelona Spain, Barcelona
 Berruguete 126 Horta Guinard 08035 Barcelona Spain, Barcelona
 Bloomsbury Way Camden London WC1A 2SD United Kingdom, London
-Boltzmanngasse 8 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Boltzmanngasse 8 09 Alsergrund 1090 Vienna Austria, Vienna
 Bond Street Mayfair Westminster Borough London W1S 2YF United Kingdom, London
 Boquer a 10 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Boria 24 26 Ciutat Vella 08003 Barcelona Spain, Barcelona
-Breite Gasse 9 07 Neubau 1070 Vienna Austria, Neubau
+Breite Gasse 9 07 Neubau 1070 Vienna Austria, Vienna
 Bridges Court Road Battersea London SW11 3BE United Kingdom, London
 Bryanston Street Marble Arch Westminster Borough London W1H 7EH United Kingdom, London
 Buckingham Gate Westminster Borough London SW1E 6AF United Kingdom, London
-Burggasse 2 07 Neubau 1070 Vienna Austria, Neubau
+Burggasse 2 07 Neubau 1070 Vienna Austria, Vienna
 C rcega 368 Eixample 08037 Barcelona Spain, Barcelona
 C rsega 289 Eixample 08008 Barcelona Spain, Barcelona
 Cadogan Place Kensington and Chelsea London SW1X 9PY United Kingdom, London
@@ -876,7 +876,7 @@ Caspe 103 Eixample 08013 Barcelona Spain, Barcelona
 Catherine Grove Greenwich Greenwich London SE10 8BB United Kingdom, London
 Chassestraat 62 64 De Baarsjes 1057 JJ Amsterdam Netherlands, Amsterdam
 Chelsea Harbour Hammersmith and Fulham London SW10 0XG United Kingdom, London
-Coburgbastei 4 01 Innere Stadt 1010 Vienna Austria, Wien
+Coburgbastei 4 01 Innere Stadt 1010 Vienna Austria, Vienna
 Comte Borrell 208 Eixample 08029 Barcelona Spain, Barcelona
 Comte d Urgell 232 Eixample 08036 Barcelona Spain, Barcelona
 Consell de Cent 498 500 Eixample 08013 Barcelona Spain, Barcelona
@@ -904,12 +904,12 @@ Dam 9 Amsterdam City Center 1012 JS Amsterdam Netherlands, Amsterdam
 Damrak 1 5 Amsterdam City Center 1012 LG Amsterdam Netherlands, Amsterdam
 Damrak 93 94 Amsterdam City Center 1012 LP Amsterdam Netherlands, Amsterdam
 Damrak 96 Amsterdam City Center 1012 LP Amsterdam Netherlands, Amsterdam
-Daungasse 1 6 7 08 Josefstadt 1080 Vienna Austria, Josefstadt
+Daungasse 1 6 7 08 Josefstadt 1080 Vienna Austria, Vienna
 De Boelelaan 2 Zuideramstel 1083 HJ Amsterdam Netherlands, Amsterdam
 De Passage 90 Noord Holland Zuidoost 1101 AX Amsterdam Netherlands, Amsterdam
 Delflandlaan 15 Slotervaart 1062 EA Amsterdam Netherlands, Amsterdam
 Dels Lledo 7 Ciutat Vella 08003 Barcelona Spain, Barcelona
-Desider Friedmann Platz 2 01 Innere Stadt 1010 Vienna Austria, Wien
+Desider Friedmann Platz 2 01 Innere Stadt 1010 Vienna Austria, Vienna
 Diagonal Pere IV 272 Sant Mart 08005 Barcelona Spain, Barcelona
 Dijsselhofplantsoen 7 Oud Zuid 1077 BJ Amsterdam Netherlands, Amsterdam
 Diputaci 195 Eixample 08011 Barcelona Spain, Barcelona
@@ -919,14 +919,14 @@ Diputacion 250 Eixample 08007 Barcelona Spain, Barcelona
 Distelkade 21 Amsterdam Noord 1031 XP Amsterdam Netherlands, Amsterdam
 Doctor Carulla 25 Sarri St Gervasi 08017 Barcelona Spain, Barcelona
 Doctor Trueta 164 Sant Mart 08005 Barcelona Spain, Barcelona
-Donau City Stra e 7 22 Donaustadt 1220 Vienna Austria, Donaustadt
-Dorotheergasse 3 01 Innere Stadt 1010 Vienna Austria, Wien
+Donau City Stra e 7 22 Donaustadt 1220 Vienna Austria, Vienna
+Dorotheergasse 3 01 Innere Stadt 1010 Vienna Austria, Vienna
 Duc De Medinaceli 8 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Eerste Constantijn Huygensstraat 10A Oud West 1054 BR Amsterdam Netherlands, Amsterdam
 Eerste Constantijn huygensstraat 26G Oud West 1054 BR Amsterdam Netherlands, Amsterdam
 Elisabets 11 Ciutat Vella 08001 Barcelona Spain, Barcelona
 Empire Way Wembley Brent London HA9 8DS United Kingdom, London
-Engerthstra e 173 175 02 Leopoldstadt 1020 Vienna Austria, Brigittenau
+Engerthstra e 173 175 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Enric Granados 62 64 Eixample 08008 Barcelona Spain, Barcelona
 Enrique Granados 83 Eixample 08008 Barcelona Spain, Barcelona
 Epping Forest 30 Oak Hill London IG8 9NY United Kingdom, London
@@ -934,21 +934,21 @@ Espronceda 6 Sant Mart 08005 Barcelona Spain, Barcelona
 Europaboulevard 10 Zuideramstel 1083 AD Amsterdam Netherlands, Amsterdam
 Euston Road Camden London NW1 2AR United Kingdom, London
 Excel 2 Festoon Way Royal Victoria Dock Newham London E16 1RH United Kingdom, London
-F hrichgasse 10 01 Innere Stadt 1010 Vienna Austria, Wien
-Favoritenstra e 12 04 Wieden 1040 Vienna Austria, Wieden
-Felberstra e 4 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Rudolfsheim-Fünfhaus
+F hrichgasse 10 01 Innere Stadt 1010 Vienna Austria, Vienna
+Favoritenstra e 12 04 Wieden 1040 Vienna Austria, Vienna
+Felberstra e 4 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Vienna
 Ferdinand Bolstraat 194 Oud Zuid 1072 LW Amsterdam Netherlands, Amsterdam
 Ferdinand Bolstraat 333 Oud Zuid 1072 LH Amsterdam Netherlands, Amsterdam
-Filmteichstra e 5 10 Favoriten 1100 Vienna Austria, Favoriten
+Filmteichstra e 5 10 Favoriten 1100 Vienna Austria, Vienna
 Fizeaustraat 2 Oost 1097 SC Amsterdam Netherlands, Amsterdam
-Fleischmarkt 1a 01 Innere Stadt 1010 Vienna Austria, Wien
-Frankenberggasse 10 04 Wieden 1040 Vienna Austria, Wieden
-Freytaggasse 25 27 21 Floridsdorf 1210 Vienna Austria, Floridsdorf
+Fleischmarkt 1a 01 Innere Stadt 1010 Vienna Austria, Vienna
+Frankenberggasse 10 04 Wieden 1040 Vienna Austria, Vienna
+Freytaggasse 25 27 21 Floridsdorf 1210 Vienna Austria, Vienna
 Fulham Road Stamford Bridge Hammersmith and Fulham London SW6 1HS United Kingdom, London
 Galleria Del Corso 3 Milan City Center 20122 Milan Italy, Milano
 George Gershwinlaan 101 Zuideramstel 1082 MT Amsterdam Netherlands, Amsterdam
 George Street Westminster Borough London W1H 5BJ United Kingdom, London
-Getreidemarkt 5 06 Mariahilf 1060 Vienna Austria, Mariahilf
+Getreidemarkt 5 06 Mariahilf 1060 Vienna Austria, Vienna
 Girona 158 Eixample 08037 Barcelona Spain, Barcelona
 Gran V a de les Corts Catalanes 322 Sants Montju c 08004 Barcelona Spain, Barcelona
 Gran V a De Les Corts Catalanes 570 Eixample 08011 Barcelona Spain, Barcelona
@@ -964,38 +964,38 @@ Gran Via de les Corts Catalanes 668 Eixample 08010 Barcelona Spain, Barcelona
 Gran Via de les Corts Catalanes 678 Eixample 08010 Barcelona Spain, Barcelona
 Gran Via de les Corts Catalanes 700 Eixample 08010 Barcelona Spain, Barcelona
 Great Cumberland Place Westminster Borough London W1H 7DL United Kingdom, London
-Grieshofgasse 11 12 Meidling 1120 Vienna Austria, Meidling
-Gro e Stadtgutgasse 31 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Grieshofgasse 11 12 Meidling 1120 Vienna Austria, Vienna
+Gro e Stadtgutgasse 31 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Grosvenor Square Westminster Borough London W1K 6JP United Kingdom, London
-Gudrunstra e 184 10 Favoriten 1100 Vienna Austria, Favoriten
+Gudrunstra e 184 10 Favoriten 1100 Vienna Austria, Vienna
 Guillem Tell 49 Sarri St Gervasi 08006 Barcelona Spain, Barcelona
-Gutheil Schoder Gasse 7B 10 Favoriten 1100 Vienna Austria, Favoriten
-Habsburgergasse 5 01 Innere Stadt 1010 Vienna Austria, Wien
-Hafnersteig 7 01 Innere Stadt 1010 Vienna Austria, Wien
+Gutheil Schoder Gasse 7B 10 Favoriten 1100 Vienna Austria, Vienna
+Habsburgergasse 5 01 Innere Stadt 1010 Vienna Austria, Vienna
+Hafnersteig 7 01 Innere Stadt 1010 Vienna Austria, Vienna
 Half Moon Street Westminster Borough London W1J 7BH United Kingdom, London
 Half Moon Street Westminster Borough London W1J 7BN United Kingdom, London
 Halkin Street Westminster Borough London SW1X 7DJ United Kingdom, London
 Hamilton Place Park Lane Westminster Borough London W1J 7DR United Kingdom, London
-Handelskai 269 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Handelskai 269 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Hanger Lane Ealing London W5 3HL United Kingdom, London
-Harmoniegasse 5 7 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Harmoniegasse 5 7 09 Alsergrund 1090 Vienna Austria, Vienna
 Hendrikje Stoffelstraat 1 Slotervaart 1058 GC Amsterdam Netherlands, Amsterdam
 Herengracht 255 Amsterdam City Center 1016 BJ Amsterdam Netherlands, Amsterdam
 Herengracht 341 Amsterdam City Center 1016 AZ Amsterdam Netherlands, Amsterdam
 Herengracht 519 525 Amsterdam City Center 1017 BV Amsterdam Netherlands, Amsterdam
 Herengracht 542 556 Amsterdam City Center 1017 CG Amsterdam Netherlands, Amsterdam
-Hernalser Hauptstra e 105 17 Hernals 1170 Vienna Austria, Hernals
-Hernalser Hauptstra e 187 17 Hernals 1170 Vienna Austria, Hernals
-Herrengasse 10 01 Innere Stadt 1010 Vienna Austria, Wien
-Herrengasse 12 01 Innere Stadt 1010 Vienna Austria, Wien
-Hertha Firnberg Stra e 5 10 Favoriten 1100 Vienna Austria, Favoriten
-Hietzinger Hauptstra e 10 14 13 Hietzing 1130 Vienna Austria, Hietzing
-Hietzinger Hauptstra e 134 13 Hietzing 1130 Vienna Austria, Hietzing
-Hintschiggasse 1 10 Favoriten 1100 Vienna Austria, Favoriten
+Hernalser Hauptstra e 105 17 Hernals 1170 Vienna Austria, Vienna
+Hernalser Hauptstra e 187 17 Hernals 1170 Vienna Austria, Vienna
+Herrengasse 10 01 Innere Stadt 1010 Vienna Austria, Vienna
+Herrengasse 12 01 Innere Stadt 1010 Vienna Austria, Vienna
+Hertha Firnberg Stra e 5 10 Favoriten 1100 Vienna Austria, Vienna
+Hietzinger Hauptstra e 10 14 13 Hietzing 1130 Vienna Austria, Vienna
+Hietzinger Hauptstra e 134 13 Hietzing 1130 Vienna Austria, Vienna
+Hintschiggasse 1 10 Favoriten 1100 Vienna Austria, Vienna
 Hobbemakade 50 Oud Zuid 1071 XL Amsterdam Netherlands, Amsterdam
-Hoffingergasse 26 28 12 Meidling 1120 Vienna Austria, Meidling
+Hoffingergasse 26 28 12 Meidling 1120 Vienna Austria, Vienna
 Holland Park Avenue Kensington and Chelsea London W11 4UL United Kingdom, London
-Hollandstra e 3 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Hollandstra e 3 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Hoogoorddreef 1 Zuidoost 1101 BA Amsterdam Netherlands, Amsterdam
 Hoogoorddreef 66 Zuidoost 1101 BE Amsterdam Netherlands, Amsterdam
 Hyde Park Corner Westminster Borough London SW1X 7TA United Kingdom, London
@@ -1008,21 +1008,21 @@ Jan Luykenstraat 58 Oud Zuid 1071 CS Amsterdam Netherlands, Amsterdam
 Jaume I 6 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Joan G ell 207 211 Les Corts 08028 Barcelona Spain, Barcelona
 Joan Muyskenweg 10 Oost 1096 CJ Amsterdam Netherlands, Amsterdam
-Johann H rbiger Gasse 30 23 Liesing 1230 Vienna Austria, Liesing
-Johann Staud Stra e 32 16 Ottakring 1160 Vienna Austria, Ottakring
-Johannesgasse 28 03 Landstra e 1030 Vienna Austria, Wien
+Johann H rbiger Gasse 30 23 Liesing 1230 Vienna Austria, Vienna
+Johann Staud Stra e 32 16 Ottakring 1160 Vienna Austria, Vienna
+Johannesgasse 28 03 Landstra e 1030 Vienna Austria, Vienna
 John M Keynesplein 2 Slotervaart 1066 EP Amsterdam Netherlands, Amsterdam
-Josefsgasse 4 6 08 Josefstadt 1080 Vienna Austria, Josefstadt
+Josefsgasse 4 6 08 Josefstadt 1080 Vienna Austria, Vienna
 Josep Pla 69 Sant Mart 08019 Barcelona Spain, Barcelona
-K llnerhofgasse 6 01 Innere Stadt 1010 Vienna Austria, Wien
-K rntner Ring 1 01 Innere Stadt 1015 Vienna Austria, Wien
-K rntner Ring 16 01 Innere Stadt 1015 Vienna Austria, Wien
-K rntner Ring 8 01 Innere Stadt 1010 Vienna Austria, Wien
-K rntner Ring 9 01 Innere Stadt 1010 Vienna Austria, Wien
-K rntner Stra e 22 01 Innere Stadt 1010 Vienna Austria, Wien
-K rntner Stra e 32 34 01 Innere Stadt 1010 Vienna Austria, Wien
-K rntnerstra e 18 Eingang Neuer Markt 3 01 Innere Stadt 1010 Vienna Austria, Wien
-Karl Popper Stra e 22 10 Favoriten 1100 Vienna Austria, Favoriten
+K llnerhofgasse 6 01 Innere Stadt 1010 Vienna Austria, Vienna
+K rntner Ring 1 01 Innere Stadt 1015 Vienna Austria, Vienna
+K rntner Ring 16 01 Innere Stadt 1015 Vienna Austria, Vienna
+K rntner Ring 8 01 Innere Stadt 1010 Vienna Austria, Vienna
+K rntner Ring 9 01 Innere Stadt 1010 Vienna Austria, Vienna
+K rntner Stra e 22 01 Innere Stadt 1010 Vienna Austria, Vienna
+K rntner Stra e 32 34 01 Innere Stadt 1010 Vienna Austria, Vienna
+K rntnerstra e 18 Eingang Neuer Markt 3 01 Innere Stadt 1010 Vienna Austria, Vienna
+Karl Popper Stra e 22 10 Favoriten 1100 Vienna Austria, Vienna
 Karspeldreef 2 Zuidoost 1101 CJ Amsterdam Netherlands, Amsterdam
 Kattengat 1 Amsterdam City Center 1012 SZ Amsterdam Netherlands, Amsterdam
 Keizersgracht 148 Amsterdam City Center 1015 CX Amsterdam Netherlands, Amsterdam
@@ -1030,9 +1030,9 @@ Keizersgracht 164 Amsterdam City Center 1015 CZ Amsterdam Netherlands, Amsterdam
 Keizersgracht 384 Amsterdam City Center 1016 GB Amsterdam Netherlands, Amsterdam
 King s Cross St Pancras International Station Pancras Road Camden London N1C 4TB United Kingdom, London
 King William Walk Greenwich London SE10 9JW United Kingdom, London
-Kirchberggasse 6 07 Neubau 1070 Vienna Austria, Neubau
-Kirchengasse 41 07 Neubau 1070 Vienna Austria, Neubau
-Kleine Stadtgutgasse 4 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Kirchberggasse 6 07 Neubau 1070 Vienna Austria, Vienna
+Kirchengasse 41 07 Neubau 1070 Vienna Austria, Vienna
+Kleine Stadtgutgasse 4 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Koninginneweg 34 36 Oud Zuid 1075 CZ Amsterdam Netherlands, Amsterdam
 La Rambla 105 Ciutat Vella 08002 Barcelona Spain, Barcelona
 La Rambla 109 Ciutat Vella 08002 Barcelona Spain, Barcelona
@@ -1042,20 +1042,20 @@ Lakeside Way Brent London HA9 0BU United Kingdom, London
 Lancaster Gate Westminster Borough London W2 3LG United Kingdom, London
 Lancaster Terrace Hyde Park Westminster Borough London W2 3PF United Kingdom, London
 Lancaster Terrace Westminster Borough London W2 2TY United Kingdom, London
-Landstra er Hauptstra e 120 03 Landstra e 1030 Vienna Austria, Landstraße
-Landstra er Hauptstra e 155 03 Landstra e 1030 Vienna Austria, Landstraße
-Landstra er Hauptstra e 28 03 Landstra e 1030 Vienna Austria, Landstraße
-Lange Gasse 13 08 Josefstadt 1080 Vienna Austria, Josefstadt
+Landstra er Hauptstra e 120 03 Landstra e 1030 Vienna Austria, Vienna
+Landstra er Hauptstra e 155 03 Landstra e 1030 Vienna Austria, Vienna
+Landstra er Hauptstra e 28 03 Landstra e 1030 Vienna Austria, Vienna
+Lange Gasse 13 08 Josefstadt 1080 Vienna Austria, Vienna
 Largo Augusto 10 Milan City Center 20122 Milan Italy, Milano
 Largo Rio de Janeiro 12 Citt Studi 20133 Milan Italy, Milano
 Las Ramblas 117 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Leeuwendalersweg 21 Bos en Lommer 1055 JE Amsterdam Netherlands, Amsterdam
 Leidsekade 97 Amsterdam City Center 1017 PN Amsterdam Netherlands, Amsterdam
 Lepanto 406 Horta Guinard 08025 Barcelona Spain, Barcelona
-Lerchenfelder Stra e 1 3 07 Neubau 1070 Vienna Austria, Josefstadt
-Lichtensteg 3 01 Innere Stadt 1010 Vienna Austria, Wien
+Lerchenfelder Stra e 1 3 07 Neubau 1070 Vienna Austria, Vienna
+Lichtensteg 3 01 Innere Stadt 1010 Vienna Austria, Vienna
 Linnaeusstraat 89 Oost 1093 EK Amsterdam Netherlands, Amsterdam
-Linzer Stra e 165 14 Penzing 1140 Vienna Austria, Penzing
+Linzer Stra e 165 14 Penzing 1140 Vienna Austria, Vienna
 Llan 24 Eixample 08015 Barcelona Spain, Barcelona
 Llull 340 Sant Mart 08019 Barcelona Spain, Barcelona
 London County Hall Westminster Bridge Road Lambeth London SE1 7PB United Kingdom, London
@@ -1075,30 +1075,30 @@ Mallorca 288 Eixample 08037 Barcelona Spain, Barcelona
 Mandeville Place Westminster Borough London W1U 2BE United Kingdom, London
 Manor Road London IG8 8AE United Kingdom, London
 Manuel Girona 7 21 Sarri St Gervasi 08034 Barcelona Spain, Barcelona
-Margareteng rtel 142 05 Margareten 1050 Vienna Austria, Margareten
-Margaretenstra e 53 05 Margareten 1050 Vienna Austria, Margareten
-Margaretenstra e 92 05 Margareten 1050 Vienna Austria, Margareten
-Mariahilfer Stra e 122 Ecke Kaiserstra e 1 3 07 Neubau 1070 Vienna Austria, Neubau
-Mariahilfer Stra e 15 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Mariahilfer Stra e 32 34 07 Neubau 1070 Vienna Austria, Mariahilf
-Mariahilfer Stra e 57 59 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Mariahilfer Stra e 78 07 Neubau 1070 Vienna Austria, Mariahilf
+Margareteng rtel 142 05 Margareten 1050 Vienna Austria, Vienna
+Margaretenstra e 53 05 Margareten 1050 Vienna Austria, Vienna
+Margaretenstra e 92 05 Margareten 1050 Vienna Austria, Vienna
+Mariahilfer Stra e 122 Ecke Kaiserstra e 1 3 07 Neubau 1070 Vienna Austria, Vienna
+Mariahilfer Stra e 15 06 Mariahilf 1060 Vienna Austria, Vienna
+Mariahilfer Stra e 32 34 07 Neubau 1070 Vienna Austria, Vienna
+Mariahilfer Stra e 57 59 06 Mariahilf 1060 Vienna Austria, Vienna
+Mariahilfer Stra e 78 07 Neubau 1070 Vienna Austria, Vienna
 Mariano Cubi 62 64 Sarri St Gervasi 08006 Barcelona Spain, Barcelona
 Marina 19 21 08005 Barcelona Spain, Barcelona
-Matrosengasse 6 8 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Mautner Markhof Gasse 50 11 Simmering 1110 Vienna Austria, Simmering
+Matrosengasse 6 8 06 Mariahilf 1060 Vienna Austria, Vienna
+Mautner Markhof Gasse 50 11 Simmering 1110 Vienna Austria, Vienna
 Molenwerf 1 1014 AG Amsterdam Netherlands, Amsterdam
 Moll de Barcelona WTC Ciutat Vella 08039 Barcelona Spain, Barcelona
-Mommsengasse 5 04 Wieden 1040 Vienna Austria, Wieden
+Mommsengasse 5 04 Wieden 1040 Vienna Austria, Vienna
 Muntaner 212 Eixample 08036 Barcelona Spain, Barcelona
 Muntaner 352 Sarri St Gervasi 08021 Barcelona Spain, Barcelona
 Muntaner 505 Sarri St Gervasi 08022 Barcelona Spain, Barcelona
 Naritaweg 1 Westpoort 1043 BP Amsterdam Netherlands, Amsterdam
 Ndsm Plein 28 Amsterdam Noord 1033 WB Amsterdam Netherlands, Amsterdam
 Nes 49 Amsterdam City Center 1012 KD Amsterdam Netherlands, Amsterdam
-Neubaug rtel 26 28 07 Neubau 1070 Vienna Austria, Neubau
-Neubaug rtel 34 36 07 Neubau 1070 Vienna Austria, Neubau
-Neustift am Walde 97 99 19 D bling 1190 Vienna Austria, Döbling
+Neubaug rtel 26 28 07 Neubau 1070 Vienna Austria, Vienna
+Neubaug rtel 34 36 07 Neubau 1070 Vienna Austria, Vienna
+Neustift am Walde 97 99 19 D bling 1190 Vienna Austria, Vienna
 Nicaragua 47 Sants Montju c 08029 Barcelona Spain, Barcelona
 Nieuwe Doelenstraat 2 14 Amsterdam City Center 1012 CP Amsterdam Netherlands, Amsterdam
 Nieuwe Doelenstraat 24 Amsterdam City Center 1012 CP Amsterdam Netherlands, Amsterdam
@@ -1114,8 +1114,8 @@ Old Park Lane Westminster Borough London W1K 1LB United Kingdom, London
 One Eastern Gateway Royal Victoria Dock Newham London E16 1FR United Kingdom, London
 One Ham Yard Westminster Borough London W1D 7DT United Kingdom, London
 Oosterdoksstraat 4 Amsterdam City Center 1011 DK Amsterdam Netherlands, Amsterdam
-Opernring 11 01 Innere Stadt 1010 Vienna Austria, Wien
-Ottakringer Stra e 34 36 17 Hernals 1170 Vienna Austria, Ottakring
+Opernring 11 01 Innere Stadt 1010 Vienna Austria, Vienna
+Ottakringer Stra e 34 36 17 Hernals 1170 Vienna Austria, Vienna
 Oude Haagseweg 20 Slotervaart 1066 BW Amsterdam Netherlands, Amsterdam
 Oudeschans 75 Amsterdam City Center 1011 KW Amsterdam Netherlands, Amsterdam
 Oudezijds Voorburgwal 197 Amsterdam City Center 1012 EX Amsterdam Netherlands, Amsterdam
@@ -1124,11 +1124,11 @@ Palaud ries 26 Sants Montju c 08004 Barcelona Spain, Barcelona
 Pallars 121 125 Sant Mart 08018 Barcelona Spain, Barcelona
 Pallars 128 130 Sant Mart 08018 Barcelona Spain, Barcelona
 Panama Laan 188 196 Zeeburg 1019 AZ Amsterdam Netherlands, Amsterdam
-Papagenogasse 6 06 Mariahilf 1060 Vienna Austria, Mariahilf
+Papagenogasse 6 06 Mariahilf 1060 Vienna Austria, Vienna
 Paral lel 115 Sants Montju c 08004 Barcelona Spain, Barcelona
 Park Lane Westminster Borough London W1K 7TN United Kingdom, London
-Parkring 12 01 Innere Stadt 1010 Vienna Austria, Wien
-Parkring 12a 01 Innere Stadt 1010 Vienna Austria, Wien
+Parkring 12 01 Innere Stadt 1010 Vienna Austria, Vienna
+Parkring 12a 01 Innere Stadt 1010 Vienna Austria, Vienna
 Pas de Sota Muralla 9 Ciutat Vella 08003 Barcelona Spain, Barcelona
 Paseo de Gracia 46 Eixample 08007 Barcelona Spain, Barcelona
 Paseo de Gracia 73 Eixample 08008 Barcelona Spain, Barcelona
@@ -1147,15 +1147,15 @@ Passeig de Gracia 84 Eixample 08008 Barcelona Spain, Barcelona
 Passeig de Picasso 26 30 Ciutat Vella 08003 Barcelona Spain, Barcelona
 Passeig de Sant Antoni 36 40 Sants Montju c 08014 Barcelona Spain, Barcelona
 Passeig del Taulat 262 264 Sant Mart 08019 Barcelona Spain, Barcelona
-Pasteurgasse 1 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Pasteurgasse 1 09 Alsergrund 1090 Vienna Austria, Vienna
 Pau Claris 150 Eixample 08009 Barcelona Spain, Barcelona
 Pau Claris 179 Eixample 08037 Barcelona Spain, Barcelona
 Pelai 28 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Pelayo 14 Ciutat Vella 08001 Barcelona Spain, Barcelona
-Pelzgasse 1 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Rudolfsheim-Fünfhaus
+Pelzgasse 1 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Vienna
 Peters Lane Cowcross Street Islington London EC1M 6DS United Kingdom, London
-Petersplatz 9 01 Innere Stadt 1010 Vienna Austria, Wien
-Philharmoniker Stra e 4 01 Innere Stadt 1010 Vienna Austria, Wien
+Petersplatz 9 01 Innere Stadt 1010 Vienna Austria, Vienna
+Philharmoniker Stra e 4 01 Innere Stadt 1010 Vienna Austria, Vienna
 Piazza della Repubblica 13 Central Station 20124 Milan Italy, Milano
 Piazza Della Repubblica 17 Central Station 20124 Milan Italy, Milano
 Piazza della Repubblica 20 Central Station 20124 Milan Italy, Milano
@@ -1189,7 +1189,7 @@ Plaza Paisos Catalans s n Sants Montju c 08014 Barcelona Spain, Barcelona
 Plaza Parade Camden London NW6 5RP United Kingdom, London
 Portland Place Westminster Borough London W1B 1JA United Kingdom, London
 Poultry 27 City of London London EC2R 8AJ United Kingdom, City of London
-Praterstra e 1 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Praterstra e 1 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Prins Hendrikkade 108 Amsterdam City Center 1011 AK Amsterdam Netherlands, Amsterdam
 Prins Hendrikkade 33 Amsterdam City Center 1012 TM Amsterdam Netherlands, Amsterdam
 Prins Hendrikkade 59 72 Amsterdam City Center 1012 AD Amsterdam Netherlands, Amsterdam
@@ -1210,22 +1210,22 @@ Rambla de Catalunya 76 Eixample 08008 Barcelona Spain, Barcelona
 Rambla del Raval 17 21 Ciutat Vella 08001 Barcelona Spain, Barcelona
 Ramblas 111 Ciutat Vella 08002 Barcelona Spain, Barcelona
 Ramon Turr 196 198 Sant Mart 08005 Barcelona Spain, Barcelona
-Rathausstra e 17 01 Innere Stadt 1010 Vienna Austria, Alsergrund
-Rathstra e 24 Neustift am Walde 19 D bling 1190 Vienna Austria, Döbling
-Ratschkygasse 32 12 Meidling 1120 Vienna Austria, Meidling
+Rathausstra e 17 01 Innere Stadt 1010 Vienna Austria, Vienna
+Rathstra e 24 Neustift am Walde 19 D bling 1190 Vienna Austria, Vienna
+Ratschkygasse 32 12 Meidling 1120 Vienna Austria, Vienna
 Rec Comtal 16 18 Ciutat Vella 08003 Barcelona Spain, Barcelona
 Rembrandtplein 19 Amsterdam City Center 1017 CT Amsterdam Netherlands, Amsterdam
 Rembrandtplein 26 36 Amsterdam City Center 1017 CV Amsterdam Netherlands, Amsterdam
 Rembrandtplein 44 Amsterdam City Center 1017 CV Amsterdam Netherlands, Amsterdam
-Rennweg 12 03 Landstra e 1030 Vienna Austria, Landstraße
-Rennweg 12a 03 Landstra e 1030 Vienna Austria, Landstraße
-Rennweg 16 03 Landstra e 1030 Vienna Austria, Landstraße
-Rennweg 99 Rinnboeckstrasse 1 03 Landstra e 1030 Vienna Austria, Landstraße
+Rennweg 12 03 Landstra e 1030 Vienna Austria, Vienna
+Rennweg 12a 03 Landstra e 1030 Vienna Austria, Vienna
+Rennweg 16 03 Landstra e 1030 Vienna Austria, Vienna
+Rennweg 99 Rinnboeckstrasse 1 03 Landstra e 1030 Vienna Austria, Vienna
 Richmond Way Hammersmith and Fulham London W14 0AX United Kingdom, London
-Riemergasse 8 01 Innere Stadt 1010 Vienna Austria, Wien
-Rilke Platz 7 04 Wieden 1040 Vienna Austria, Wieden
+Riemergasse 8 01 Innere Stadt 1010 Vienna Austria, Vienna
+Rilke Platz 7 04 Wieden 1040 Vienna Austria, Vienna
 Riudarenes 7 Ciutat Vella 08002 Barcelona Spain, Barcelona
-Robert Stolz Platz 1 01 Innere Stadt 1010 Vienna Austria, Wien
+Robert Stolz Platz 1 01 Innere Stadt 1010 Vienna Austria, Vienna
 Roelof Hartstraat 1 Oud Zuid 1071 VE Amsterdam Netherlands, Amsterdam
 Roemer Visscherstraat 8 10 Oud West 1054 EV Amsterdam Netherlands, Amsterdam
 Roger de Ll ria 17 Eixample 08010 Barcelona Spain, Barcelona
@@ -1237,17 +1237,17 @@ Ronda Sant Pau 14 Ciutat Vella 08001 Barcelona Spain, Barcelona
 Ronda Sant Pere 32 Eixample 08010 Barcelona Spain, Barcelona
 Ronda Sant Pere 9 Eixample 08010 Barcelona Spain, Barcelona
 Ronda Universitat 21 Eixample 08007 Barcelona Spain, Barcelona
-Rooseveltplatz 15 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Rooseveltplatz 15 09 Alsergrund 1090 Vienna Austria, Vienna
 Rosell n 174 176 Eixample 08036 Barcelona Spain, Barcelona
 Rossell 249 Eixample 08008 Barcelona Spain, Barcelona
 Rossell 265 Eixample 08008 Barcelona Spain, Barcelona
 Rossell 390 Eixample 08025 Barcelona Spain, Barcelona
 Rossello 191 Eixample 08036 Barcelona Spain, Barcelona
-Rotensterngasse 10 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
-Rotensterngasse 7a 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
-Rotenturmstra e 15 01 Innere Stadt 1010 Vienna Austria, Wien
+Rotensterngasse 10 02 Leopoldstadt 1020 Vienna Austria, Vienna
+Rotensterngasse 7a 02 Leopoldstadt 1020 Vienna Austria, Vienna
+Rotenturmstra e 15 01 Innere Stadt 1010 Vienna Austria, Vienna
 Royal Victoria Dock Western Gateway Newham London E16 1AL United Kingdom, London
-Rudolfsplatz 11 01 Innere Stadt 1010 Vienna Austria, Wien
+Rudolfsplatz 11 01 Innere Stadt 1010 Vienna Austria, Vienna
 Rusland 17 Amsterdam City Center 1012 CK Amsterdam Netherlands, Amsterdam
 Sabino de Arana 22 24 Les Corts 08028 Barcelona Spain, Barcelona
 San Sever 5 Ciutat Vella 08002 Barcelona Spain, Barcelona
@@ -1257,29 +1257,29 @@ Santa Rosa Esplugues 33 08950 Barcelona Spain, BCN
 Santal 8 Sarri St Gervasi 08021 Barcelona Spain, Barcelona
 Sarphatistraat 104 Amsterdam City Center 1018 GV Amsterdam Netherlands, Amsterdam
 Scarsdale Place Kensington Kensington and Chelsea London W8 5SY United Kingdom, London
-Sch nbrunner Schlossstra e 38 40 12 Meidling 1120 Vienna Austria, Meidling
-Sch nbrunner Stra e 41 05 Margareten 1050 Vienna Austria, Margareten
+Sch nbrunner Schlossstra e 38 40 12 Meidling 1120 Vienna Austria, Vienna
+Sch nbrunner Stra e 41 05 Margareten 1050 Vienna Austria, Vienna
 Schepenbergweg 50 Zuidoost 1105 AT Amsterdam Netherlands, Amsterdam
-Schlossallee 8 14 Penzing 1140 Vienna Austria, Penzing
-Schottenfeldgasse 74 07 Neubau 1070 Vienna Austria, Neubau
-Schottenring 11 01 Innere Stadt 1010 Vienna Austria, Wien
-Schottenring 24 01 Innere Stadt 1010 Vienna Austria, Wien
-Schottenring 3 01 Innere Stadt 1010 Vienna Austria, Alsergrund
-Schubertring 10 12 01 Innere Stadt 1010 Vienna Austria, Wien
-Schubertring 11 01 Innere Stadt 1010 Vienna Austria, Wien
-Schubertring 5 7 01 Innere Stadt 1010 Vienna Austria, Wien
-Schulerstra e 10 01 Innere Stadt 1010 Vienna Austria, Wien
-Schulerstra e 14 01 Innere Stadt 1010 Vienna Austria, Wien
-Schwedenplatz 3 4 01 Innere Stadt 1010 Vienna Austria, Wien
+Schlossallee 8 14 Penzing 1140 Vienna Austria, Vienna
+Schottenfeldgasse 74 07 Neubau 1070 Vienna Austria, Vienna
+Schottenring 11 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schottenring 24 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schottenring 3 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schubertring 10 12 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schubertring 11 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schubertring 5 7 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schulerstra e 10 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schulerstra e 14 01 Innere Stadt 1010 Vienna Austria, Vienna
+Schwedenplatz 3 4 01 Innere Stadt 1010 Vienna Austria, Vienna
 Silvio Pellico 4 Milan City Center 20121 Milan Italy, Milano
-Simmeringer Hauptstra e 55 57 11 Simmering 1110 Vienna Austria, Simmering
+Simmeringer Hauptstra e 55 57 11 Simmering 1110 Vienna Austria, Vienna
 Singel 303 309 Amsterdam City Center 1012 WJ Amsterdam Netherlands, Amsterdam
-Singerstra e 3 01 Innere Stadt 1010 Vienna Austria, Wien
+Singerstra e 3 01 Innere Stadt 1010 Vienna Austria, Vienna
 Sloane Square Kensington and Chelsea London SW1W 8EG United Kingdom, London
 Slotermeerlaan 80 Geuzenveld Slotermeer 1064 HD Amsterdam Netherlands, Amsterdam
-Sonnenhofgasse 8 10 05 Margareten 1050 Vienna Austria, Margareten
-Sonnwendgasse 15 10 Favoriten 1100 Vienna Austria, Favoriten
-Sonnwendgasse 8 10 Favoriten 1100 Vienna Austria, Favoriten
+Sonnenhofgasse 8 10 05 Margareten 1050 Vienna Austria, Vienna
+Sonnwendgasse 15 10 Favoriten 1100 Vienna Austria, Vienna
+Sonnwendgasse 8 10 Favoriten 1100 Vienna Austria, Vienna
 South Quay Marsh Wall Tower Hamlets London E14 9SH United Kingdom, London
 Southampton Row Bloomsbury Camden London WC1B 4AR United Kingdom, London
 Spaarndammerdijk 304 Westerpark 1013 ZX Amsterdam Netherlands, Amsterdam
@@ -1291,20 +1291,20 @@ Staalmeesterslaan 410 Slotervaart 1057 PH Amsterdam Netherlands, Amsterdam
 Stadhouderskade 12 Oud West 1054 ES Amsterdam Netherlands, Amsterdam
 Stadhouderskade 25 Oud Zuid 1071 ZD Amsterdam Netherlands, Amsterdam
 Stadhouderskade 7 Oud West 1054 ES Amsterdam Netherlands, Amsterdam
-Stephansplatz 12 01 Innere Stadt 1010 Vienna Austria, Wien
-Stephansplatz 9 01 Innere Stadt 1010 Vienna Austria, Innere Stadt
+Stephansplatz 12 01 Innere Stadt 1010 Vienna Austria, Vienna
+Stephansplatz 9 01 Innere Stadt 1010 Vienna Austria, Innere Vienna
 Strand Westminster Borough London WC2R 0EU United Kingdom, London
 Stratton Street Mayfair Westminster Borough London W1J 8LT United Kingdom, London
-Stubenring 2 01 Innere Stadt 1010 Vienna Austria, Wien
-Taborstra e 12 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Stubenring 2 01 Innere Stadt 1010 Vienna Austria, Vienna
+Taborstra e 12 02 Leopoldstadt 1020 Vienna Austria, Vienna
 The Strand Westminster Borough London WC2N 5HX United Kingdom, London
-Tiefer Graben 14 20 01 Innere Stadt 1010 Vienna Austria, Wien
+Tiefer Graben 14 20 01 Innere Stadt 1010 Vienna Austria, Vienna
 Tilling Road London NW2 1LP United Kingdom, London
 Tower Bridge Road Southwark London SE1 3UN United Kingdom, London
-Trabrennstra e 4 02 Leopoldstadt 1020 Vienna Austria, Leopoldstadt
+Trabrennstra e 4 02 Leopoldstadt 1020 Vienna Austria, Vienna
 Travessera de les Corts 150 152 Les Corts 08028 Barcelona Spain, Barcelona
-Ungargasse 60 03 Landstra e 1030 Vienna Austria, Landstraße
-Uraniastra e 2 01 Innere Stadt 1010 Vienna Austria, Wien
+Ungargasse 60 03 Landstra e 1030 Vienna Austria, Vienna
+Uraniastra e 2 01 Innere Stadt 1010 Vienna Austria, Vienna
 V a Augusta 127 Sarri St Gervasi 08006 Barcelona Spain, Barcelona
 V a Laietana 69 Ciutat Vella 08003 Barcelona Spain, Barcelona
 Valencia 157 Eixample 08011 Barcelona Spain, Barcelona
@@ -1447,16 +1447,16 @@ Vijzelstraat 49 Amsterdam City Center 1017 HE Amsterdam Netherlands, Amsterdam
 Vilamari 34 36 Eixample 08015 Barcelona Spain, Barcelona
 Vilana 7 Sarri St Gervasi 08017 Barcelona Spain, Barcelona
 Villarroel 106 Eixample 08011 Barcelona Spain, Barcelona
-Viriotgasse 5 09 Alsergrund 1090 Vienna Austria, Alsergrund
+Viriotgasse 5 09 Alsergrund 1090 Vienna Austria, Vienna
 Vondelstraat 18 30 Oud West 1054 GE Amsterdam Netherlands, Amsterdam
-Wagramer Stra e 16 18 22 Donaustadt 1220 Vienna Austria, Donaustadt
-Wagramer Stra e 21 22 Donaustadt 1220 Vienna Austria, Donaustadt
-Wagramer Stra e 51 22 Donaustadt 1220 Vienna Austria, Donaustadt
-Wagramer Stra e 8 22 Donaustadt 1220 Vienna Austria, Donaustadt
-Wallgasse 23 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Webgasse 23 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Webgasse 26 06 Mariahilf 1060 Vienna Austria, Mariahilf
-Weihburggasse 3 01 Innere Stadt 1010 Vienna Austria, Wien
+Wagramer Stra e 16 18 22 Donaustadt 1220 Vienna Austria, Vienna
+Wagramer Stra e 21 22 Donaustadt 1220 Vienna Austria, Vienna
+Wagramer Stra e 51 22 Donaustadt 1220 Vienna Austria, Vienna
+Wagramer Stra e 8 22 Donaustadt 1220 Vienna Austria, Vienna
+Wallgasse 23 06 Mariahilf 1060 Vienna Austria, Vienna
+Webgasse 23 06 Mariahilf 1060 Vienna Austria, Vienna
+Webgasse 26 06 Mariahilf 1060 Vienna Austria, Vienna
+Weihburggasse 3 01 Innere Stadt 1010 Vienna Austria, Vienna
 Westeinde 26 Amsterdam City Center 1017 ZP Amsterdam Netherlands, Amsterdam
 Western Avenue Ealing London W5 1HG United Kingdom, London
 Western Gateway Newham London E16 1FA United Kingdom, London
@@ -1466,11 +1466,28 @@ Weteringschans 251 Amsterdam City Center 1017 XJ Amsterdam Netherlands, Amsterda
 Whitcomb Street Trafalgar Square Westminster Borough London WC2H 7HG United Kingdom, London
 Whitehall Place Westminster Borough London SW1A 2BD United Kingdom, London
 Wibautstraat 129 Oost 1091 GL Amsterdam Netherlands, Amsterdam
-Wiedner G rtel 14 04 Wieden 1040 Vienna Austria, Wieden
-Wiedner Hauptstr 27 29 04 Wieden 1040 Vienna Austria, Wieden
-Wiedner Hauptstra e 12 04 Wieden 1040 Vienna Austria, Wieden
-Wiedner Hauptstra e 44 04 Wieden 1040 Vienna Austria, Wieden
-Wildpretmarkt 5 01 Innere Stadt 1010 Vienna Austria, Wien
+Wiedner G rtel 14 04 Wieden 1040 Vienna Austria, Vienna
+Wiedner Hauptstr 27 29 04 Wieden 1040 Vienna Austria, Vienna
+Wiedner Hauptstra e 12 04 Wieden 1040 Vienna Austria, Vienna
+Wiedner Hauptstra e 44 04 Wieden 1040 Vienna Austria, Vienna
+Wildpretmarkt 5 01 Innere Stadt 1010 Vienna Austria, Vienna
 Wilton Place Knightsbridge Westminster Borough London SW1X 7RL United Kingdom, London
 Wrights Lane Kensington and Chelsea London W8 5SP United Kingdom, London
-Wurzbachgasse 21 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Rudolfsheim-Fünfhaus
+Wurzbachgasse 21 15 Rudolfsheim F nfhaus 1150 Vienna Austria, Vienna
+20 Rue De La Ga t 14th arr 75014 Paris France, Paris
+23 Rue Damr mont 18th arr 75018 Paris France, Paris
+4 rue de la P pini re 8th arr 75008 Paris France, Paris
+Bail n 4 6 Eixample 08010 Barcelona Spain, Barcelona
+Gr nentorgasse 30 09 Alsergrund 1090 Vienna Austria, Vienna
+Hasenauerstra e 12 19 D bling 1190 Vienna Austria, Vienna
+Josefst dter Stra e 10 12 08 Josefstadt 1080 Vienna Austria, Vienna
+Josefst dter Stra e 22 08 Josefstadt 1080 Vienna Austria, Vienna
+Landstra er G rtel 5 03 Landstra e 1030 Vienna Austria, Vienna
+Paragonstra e 1 11 Simmering 1110 Vienna Austria, Vienna
+Pau Clar s 122 Eixample 08009 Barcelona Spain, Barcelona
+Savoyenstra e 2 16 Ottakring 1160 Vienna Austria, Vienna
+Sep lveda 180 Eixample 08011 Barcelona Spain, Barcelona
+Sieveringer Stra e 4 19 D bling 1190 Vienna Austria, Vienna
+Taborstra e 8 A 02 Leopoldstadt 1020 Vienna Austria, Vienna
+W hringer Stra e 12 09 Alsergrund 1090 Vienna Austria, Vienna
+W hringer Stra e 33 35 09 Alsergrund 1090 Vienna Austria, Vienna
