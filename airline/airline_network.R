@@ -65,4 +65,4 @@ ggplot(data = routes_coord) +
                                any(destination_city=="Vienna") ||
                                any(destination_city=="Milan"))), 
             aes(x = lng, y = lat, group = flight_id, colour = destination_city), 
-            alpha = 0.05)
+            alpha = 0.1)
