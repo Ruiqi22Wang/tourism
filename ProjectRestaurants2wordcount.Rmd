@@ -1,0 +1,386 @@
+---
+title: "ProjectPhraseCountsRestaurants"
+author: "Kirsten Mead"
+date: "10/21/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+setwd("~/Desktop/703 Project")
+
+library(tidytext)
+library(dplyr)
+library(gtools)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+library(SnowballC)
+
+```
+
+#Data
+
+```{r data}
+
+restaurants <- read.csv('TA_restaurants_curated.csv')
+
+#list of locations to be included for restaurants
+locations <- c('Amsterdam', 'Paris', 'London', 'Vienna',
+               'Barcelona', 'Milan')
+
+#all restaurants in chosen cities
+chosen_restaurants <- restaurants[grepl(paste(locations, collapse = '|'), restaurants$City),]
+
+#separate data frames for restaurants in each city
+Amsterdam_rest <- chosen_restaurants[chosen_restaurants$City == "Amsterdam",] 
+Paris_rest <- chosen_restaurants[chosen_restaurants$City == 'Paris',]
+Vienna_rest <- chosen_restaurants[chosen_restaurants$City == 'Vienna',]
+London_rest <- chosen_restaurants[chosen_restaurants$City == 'London',]
+Barcelona_rest <- chosen_restaurants[chosen_restaurants$City == 'Barcelona',]
+Milan_rest <- chosen_restaurants[chosen_restaurants$City == 'Milan',]
+
+```
+
+#Amsterdam
+
+```{r Amsterdam}
+
+#restaruant reviews for Amsterdam
+A_rest_reviews <- Amsterdam_rest[,c(1, 9)]
+A_rest_reviews$Reviews <- as.character(A_rest_reviews$Reviews)
+
+#create a tidy text data frame for Amsterdam restaurant reviews
+tidy_A_rest_reviews <- A_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+
+#remove stop words from Amsterdam restaurant reviews
+data("stop_words")
+tidy_A_rest_reviews <- tidy_A_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from Amsterdam restaurant reviews
+tidy_A_rest_reviews$one <- gsub("\\s+","",tidy_A_rest_reviews$one)
+tidy_A_rest_reviews$two <- gsub("\\s+","",tidy_A_rest_reviews$two)
+
+#remove numbers from Amsterdam restaurant reviews
+tidy_A_rest_reviews <-tidy_A_rest_reviews[-grep("\\b\\d+\\b", tidy_A_rest_reviews$one),]
+tidy_A_rest_reviews <-tidy_A_rest_reviews[-grep("\\b\\d+\\b", tidy_A_rest_reviews$two),]
+tidy_A_rest_reviews <- tidy_A_rest_reviews[-1,]
+
+#stem words from Amsterdam restaurant reviews
+tidy_A_rest_reviews <-tidy_A_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_A_rest_reviews <-tidy_A_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+A_rest_top20 <- tidy_A_rest_reviews[seq(1,20,by=1),]
+A_rest_top20$one <- as.factor(A_rest_top20$one)
+A_rest_top20$two <- as.factor(A_rest_top20$two)
+A_rest_top20$words <- paste(A_rest_top20$one, A_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(A_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in Amsterdam Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#Barcelona 
+
+```{r Barcelona}
+
+#restaruant reviews for Barcelona
+B_rest_reviews <- Barcelona_rest[,c(1, 9)]
+B_rest_reviews$Reviews <- as.character(B_rest_reviews$Reviews)
+
+#create a tidy text data frame for Barcelona restaurant reviews
+tidy_B_rest_reviews <- B_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+
+#remove stop words from Barcelona restaurant reviews
+data("stop_words")
+tidy_B_rest_reviews <- tidy_B_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from Barcelona restaurant reviews
+tidy_B_rest_reviews$one <- gsub("\\s+","",tidy_B_rest_reviews$one)
+tidy_B_rest_reviews$two <- gsub("\\s+","",tidy_B_rest_reviews$two)
+
+#remove numbers from Barcelona restaurant reviews
+tidy_B_rest_reviews <-tidy_B_rest_reviews[-grep("\\b\\d+\\b", tidy_B_rest_reviews$one),]
+tidy_B_rest_reviews <-tidy_B_rest_reviews[-grep("\\b\\d+\\b", tidy_B_rest_reviews$two),]
+tidy_B_rest_reviews <- tidy_B_rest_reviews[-1,]
+
+#stem words from Barcelona restaurant reviews
+tidy_B_rest_reviews <-tidy_B_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_B_rest_reviews <-tidy_B_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+B_rest_top20 <- tidy_B_rest_reviews[seq(1,20,by=1),]
+B_rest_top20$one <- as.factor(B_rest_top20$one)
+B_rest_top20$two <- as.factor(B_rest_top20$two)
+B_rest_top20$words <- paste(B_rest_top20$one, B_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(B_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in Barcelona Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+
+
+```
+
+#London
+
+```{r London}
+
+#restaruant reviews for London
+L_rest_reviews <- London_rest[,c(1, 9)]
+L_rest_reviews$Reviews <- as.character(L_rest_reviews$Reviews)
+
+#create a tidy text data frame for London restaurant reviews
+tidy_L_rest_reviews <- L_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+
+#remove stop words from London restaurant reviews
+data("stop_words")
+tidy_L_rest_reviews <- tidy_L_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from London restaurant reviews
+tidy_L_rest_reviews$one <- gsub("\\s+","",tidy_L_rest_reviews$one)
+tidy_L_rest_reviews$two <- gsub("\\s+","",tidy_L_rest_reviews$two)
+
+#remove numbers from London restaurant reviews
+tidy_L_rest_reviews <-tidy_L_rest_reviews[-grep("\\b\\d+\\b", tidy_L_rest_reviews$one),]
+tidy_L_rest_reviews <-tidy_L_rest_reviews[-grep("\\b\\d+\\b", tidy_L_rest_reviews$two),]
+tidy_L_rest_reviews <- tidy_L_rest_reviews[-1,]
+
+#stem words from London restaurant reviews
+tidy_L_rest_reviews <-tidy_L_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_L_rest_reviews <-tidy_L_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+L_rest_top20 <- tidy_L_rest_reviews[seq(1,20,by=1),]
+L_rest_top20$one <- as.factor(L_rest_top20$one)
+L_rest_top20$two <- as.factor(L_rest_top20$two)
+L_rest_top20$words <- paste(L_rest_top20$one, L_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(L_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in London Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+
+```
+
+
+#Milan
+
+```{r Milan}
+
+#restaruant reviews for Milan
+M_rest_reviews <- Milan_rest[,c(1, 9)]
+M_rest_reviews$Reviews <- as.character(M_rest_reviews$Reviews)
+
+#create a tidy text data frame for Milan restaurant reviews
+tidy_M_rest_reviews <- M_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+
+#remove stop words from Milan restaurant reviews
+data("stop_words")
+tidy_M_rest_reviews <- tidy_M_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from Milan restaurant reviews
+tidy_M_rest_reviews$one <- gsub("\\s+","",tidy_M_rest_reviews$one)
+tidy_M_rest_reviews$two <- gsub("\\s+","",tidy_M_rest_reviews$two)
+
+#remove numbers from Milan restaurant reviews
+tidy_M_rest_reviews <-tidy_M_rest_reviews[-grep("\\b\\d+\\b", tidy_M_rest_reviews$one),]
+tidy_M_rest_reviews <-tidy_M_rest_reviews[-grep("\\b\\d+\\b", tidy_M_rest_reviews$two),]
+tidy_M_rest_reviews <- tidy_M_rest_reviews[-1,]
+
+#stem words from Milan restaurant reviews
+tidy_M_rest_reviews <-tidy_M_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_M_rest_reviews <-tidy_M_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+M_rest_top20 <- tidy_M_rest_reviews[seq(1,20,by=1),]
+M_rest_top20$one <- as.factor(M_rest_top20$one)
+M_rest_top20$two <- as.factor(M_rest_top20$two)
+M_rest_top20$words <- paste(M_rest_top20$one, M_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(M_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in Milan Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+
+```
+
+#Paris
+
+```{r Paris}
+
+#restaruant reviews for Paris
+P_rest_reviews <- Paris_rest[,c(1, 9)]
+P_rest_reviews$Reviews <- as.character(P_rest_reviews$Reviews)
+
+#create a tidy text data frame for Paris restaurant reviews
+tidy_P_rest_reviews <- P_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+
+#remove stop words from Paris restaurant reviews
+data("stop_words")
+tidy_P_rest_reviews <- tidy_P_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from Paris restaurant reviews
+tidy_P_rest_reviews$one <- gsub("\\s+","",tidy_P_rest_reviews$one)
+tidy_P_rest_reviews$two <- gsub("\\s+","",tidy_P_rest_reviews$two)
+
+#remove numbers from Paris restaurant reviews
+tidy_P_rest_reviews <-tidy_P_rest_reviews[-grep("\\b\\d+\\b", tidy_P_rest_reviews$one),]
+tidy_P_rest_reviews <-tidy_P_rest_reviews[-grep("\\b\\d+\\b", tidy_P_rest_reviews$two),]
+tidy_P_rest_reviews <- tidy_P_rest_reviews[-1,]
+
+#stem words from Paris restaurant reviews
+tidy_P_rest_reviews <-tidy_P_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_P_rest_reviews <-tidy_P_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+P_rest_top20 <- tidy_P_rest_reviews[seq(1,20,by=1),]
+P_rest_top20$one <- as.factor(P_rest_top20$one)
+P_rest_top20$two <- as.factor(P_rest_top20$two)
+P_rest_top20$words <- paste(P_rest_top20$one, P_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(P_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in Paris Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+```
+
+#Vienna
+
+```{r Vienna}
+
+#restaruant reviews for Vienna
+V_rest_reviews <- Vienna_rest[,c(1, 9)]
+V_rest_reviews$Reviews <- as.character(V_rest_reviews$Reviews)
+
+#create a tidy text data frame for Vienna restaurant reviews
+tidy_V_rest_reviews <- V_rest_reviews %>%
+  select(X, Reviews) %>%
+  unnest_tokens(ngram, Reviews, token = "ngrams", n=2) %>%
+  count(ngram, sort = TRUE) %>%
+  arrange(desc(n)) %>%
+  separate(ngram, c("one", "two"), sep = " ")
+tidy_V_rest_reviews <- tidy_V_rest_reviews[-1,]
+
+#remove stop words from Vienna restaurant reviews
+data("stop_words")
+tidy_V_rest_reviews <- tidy_V_rest_reviews %>%
+  anti_join(stop_words, by = c("one" = "word")) %>%
+  anti_join(stop_words, by = c("two" = "word"))
+
+#remove white space from Vienna restaurant reviews
+tidy_V_rest_reviews$one <- gsub("\\s+","",tidy_V_rest_reviews$one)
+tidy_V_rest_reviews$two <- gsub("\\s+","",tidy_V_rest_reviews$two)
+
+#remove numbers from Vienna restaurant reviews
+tidy_V_rest_reviews <-tidy_V_rest_reviews[-grep("\\b\\d+\\b", tidy_V_rest_reviews$one),]
+tidy_V_rest_reviews <-tidy_V_rest_reviews[-grep("\\b\\d+\\b", tidy_V_rest_reviews$two),]
+
+#stem words from Vienna restaurant reviews
+tidy_V_rest_reviews <-tidy_V_rest_reviews %>%
+  mutate_at("one", funs(wordStem((.), language="en")))
+tidy_V_rest_reviews <-tidy_V_rest_reviews %>%
+  mutate_at("two", funs(wordStem((.), language="en")))
+
+#limit to 20 ngrams
+V_rest_top20 <- tidy_V_rest_reviews[seq(1,20,by=1),]
+V_rest_top20$one <- as.factor(V_rest_top20$one)
+V_rest_top20$two <- as.factor(V_rest_top20$two)
+V_rest_top20$words <- paste(V_rest_top20$one, V_rest_top20$two, sep=" ")
+
+#plot top ngrams
+ggplot(V_rest_top20, aes(x=reorder(words, n), y=n, fill=words))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Words Appear in Vienna Restaurant Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+```
+
+
+
+
+
+
+
+

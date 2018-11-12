@@ -1,0 +1,122 @@
+---
+title: "RestaurantPrices"
+author: "Kirsten Mead"
+date: "10/26/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r data}
+setwd("~/Desktop/703 Project")
+
+library(gridExtra)
+library(tidytext)
+library(dplyr)
+library(gtools)
+library(ggplot2)
+
+restaurants <- read.csv('TA_restaurants_curated.csv')
+
+#list of locations to be included for restaurants
+locations <- c('Amsterdam', 'Paris', 'London', 'Vienna',
+               'Barcelona', 'Milan')
+
+#all restaurants in chosen cities
+chosen_restaurants <- restaurants[grepl(paste(locations, collapse = '|'), restaurants$City),]
+
+#separate data frames for restaurants in each city
+Amsterdam_rest <- chosen_restaurants[chosen_restaurants$City == "Amsterdam",] 
+Paris_rest <- chosen_restaurants[chosen_restaurants$City == 'Paris',]
+Vienna_rest <- chosen_restaurants[chosen_restaurants$City == 'Vienna',]
+London_rest <- chosen_restaurants[chosen_restaurants$City == 'London',]
+Barcelona_rest <- chosen_restaurants[chosen_restaurants$City == 'Barcelona',]
+Milan_rest <- chosen_restaurants[chosen_restaurants$City == 'Milan',]
+
+```
+```{r price counts}
+
+#Amsterdam
+A_counts <- Amsterdam_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(A_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for Amsterdam Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+#Amsterdam
+B_counts <- Barcelona_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(B_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for Barcelona Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+#Amsterdam
+L_counts <- London_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(L_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for London Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+#Amsterdam
+M_counts <- Milan_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(M_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for Milan Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+#Amsterdam
+P_counts <- Paris_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(P_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for Paris Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+#Amsterdam
+V_counts <- Vienna_rest %>%
+  count(Price.Range, sort = TRUE)
+
+#plot prices
+ggplot(V_counts, aes(x=reorder(Price.Range, n), y=n, fill=Price.Range))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Prices for Vienna Restaurants")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+
+
+```
