@@ -1,0 +1,450 @@
+---
+title: "HotelWordCounts"
+author: "Kirsten Mead"
+date: "11/11/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+setwd("~/Desktop/703 Project")
+
+library(gridExtra)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
+library(gtools)
+library(ggplot2)
+library(SnowballC)
+
+```
+
+
+#Data
+
+```{r hotel data}
+
+#read in hotel data
+hotels <- read.csv('Hotel_Reviews.csv', stringsAsFactors = FALSE)
+
+#make unique identifier for each review
+hotels$X <- seq(1:515738)
+
+#separate data frames for hotels in each city
+hotels$City <- ''
+hotels$City[grepl("Amsterdam Netherlands", hotels$Hotel_Address)] <- 'Amsterdam'
+hotels$City[grepl("Milan Italy", hotels$Hotel_Address)] <- 'Milan'
+hotels$City[grepl("United Kingdom", hotels$Hotel_Address)] <- 'London'
+hotels$City[grepl("Barcelona Spain", hotels$Hotel_Address)] <- 'Barcelona'
+hotels$City[grepl("Vienna Austria", hotels$Hotel_Address)] <- 'Vienna'
+hotels$City[grepl("Paris France", hotels$Hotel_Address)] <- 'Paris'
+
+#make a new column for city
+Amsterdam_hotel <- hotels[hotels$City == "Amsterdam",] 
+Paris_hotel <- hotels[hotels$City == 'Paris',]
+Vienna_hotel <- hotels[hotels$City == 'Vienna',]
+London_hotel <- hotels[hotels$City == 'London',]
+Barcelona_hotel <- hotels[hotels$City == 'Barcelona',]
+Milan_hotel <- hotels[hotels$City == 'Milan',]
+
+```
+
+
+#Amsterdam 
+
+```{r Amsterdam}
+
+#restaruant reviews for Amsterdam
+A_hotel_reviews <- Amsterdam_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+A_hotel_reviews$Negative_Review[grep("No Negative", A_hotel_reviews$Negative_Review)] <- NA
+A_hotel_reviews$Positive_Review[grep("No Positive", A_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for Amsterdam negative hotel reviews
+tidy_A_hotel_neg_reviews <- A_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for Amsterdam positive hotel reviews
+tidy_A_hotel_pos_reviews <- A_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_A_hotel_reviews <- smartbind(tidy_A_hotel_neg_reviews, tidy_A_hotel_pos_reviews)
+  
+  
+#arrange words from Amsterdam hotel reviews in decending order
+tidy_A_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from Amsterdam hotel reviews
+data("stop_words")
+tidy_A_hotel_reviews <- tidy_A_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from Amsterdam hotel reviews
+tidy_A_hotel_reviews$word <- gsub("\\s+","",tidy_A_hotel_reviews$word)
+
+#remove numbers from Amsterdam hotel reviews
+tidy_A_hotel_reviews <-tidy_A_hotel_reviews[-grep("\\b\\d+\\b", tidy_A_hotel_reviews$word),]
+
+#stem words from Amsterdam hotel reviews
+tidy_A_hotel_reviews <-tidy_A_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from Amsterdam hotel reviews
+A_hotel_wordcount <- tidy_A_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+A_hotel_top50 <- A_hotel_wordcount[seq(1,50,by=1),]
+A_hotel_top50$word <- as.factor(A_hotel_top50$word)
+
+
+#plot top words
+ggplot(A_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in Amsterdam Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#Barcelona
+
+```{r Barcelona}
+
+#restaruant reviews for Barcelona
+B_hotel_reviews <- Barcelona_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+B_hotel_reviews$Negative_Review[grep("No Negative", B_hotel_reviews$Negative_Review)] <- NA
+B_hotel_reviews$Positive_Review[grep("No Positive", B_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for Barcelona negative hotel reviews
+tidy_B_hotel_neg_reviews <- B_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for Barcelona positive hotel reviews
+tidy_B_hotel_pos_reviews <- B_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_B_hotel_reviews <- smartbind(tidy_B_hotel_neg_reviews, tidy_B_hotel_pos_reviews)
+  
+#arrange words from Barcelona hotel reviews in decending order
+tidy_B_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from Barcelona hotel reviews
+data("stop_words")
+tidy_B_hotel_reviews <- tidy_B_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from Barcelona hotel reviews
+tidy_B_hotel_reviews$word <- gsub("\\s+","",tidy_B_hotel_reviews$word)
+
+#remove numbers from Barcelona hotel reviews
+tidy_B_hotel_reviews <-tidy_B_hotel_reviews[-grep("\\b\\d+\\b", tidy_B_hotel_reviews$word),]
+
+#stem words from Barcelona hotel reviews
+tidy_B_hotel_reviews <-tidy_B_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from Barcelona hotel reviews
+B_hotel_wordcount <- tidy_B_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+B_hotel_top50 <- B_hotel_wordcount[seq(1,50,by=1),]
+B_hotel_top50$word <- as.factor(B_hotel_top50$word)
+
+
+#plot top words
+ggplot(B_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in Barcelona Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#London
+
+```{r London}
+
+#restaruant reviews for London
+L_hotel_reviews <- London_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+L_hotel_reviews$Negative_Review[grep("No Negative", L_hotel_reviews$Negative_Review)] <- NA
+L_hotel_reviews$Positive_Review[grep("No Positive", L_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for London negative hotel reviews
+tidy_L_hotel_neg_reviews <- L_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for London positive hotel reviews
+tidy_L_hotel_pos_reviews <- L_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_L_hotel_reviews <- smartbind(tidy_L_hotel_neg_reviews, tidy_L_hotel_pos_reviews)
+  
+#arrange words from London hotel reviews in decending order
+tidy_L_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from London hotel reviews
+data("stop_words")
+tidy_L_hotel_reviews <- tidy_L_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from London hotel reviews
+tidy_L_hotel_reviews$word <- gsub("\\s+","",tidy_L_hotel_reviews$word)
+
+#remove numbers from London hotel reviews
+tidy_L_hotel_reviews <-tidy_L_hotel_reviews[-grep("\\b\\d+\\b", tidy_L_hotel_reviews$word),]
+
+#stem words from London hotel reviews
+tidy_L_hotel_reviews <-tidy_L_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from London hotel reviews
+L_hotel_wordcount <- tidy_L_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+L_hotel_top50 <- L_hotel_wordcount[seq(1,50,by=1),]
+L_hotel_top50$word <- as.factor(L_hotel_top50$word)
+
+
+#plot top words
+ggplot(L_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in London Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+
+#Milan
+
+```{r Milan}
+
+#restaruant reviews for Milan
+M_hotel_reviews <- Milan_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+M_hotel_reviews$Negative_Review[grep("No Negative", M_hotel_reviews$Negative_Review)] <- NA
+M_hotel_reviews$Positive_Review[grep("No Positive", M_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for Milan negative hotel reviews
+tidy_M_hotel_neg_reviews <- M_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for Milan positive hotel reviews
+tidy_M_hotel_pos_reviews <- M_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_M_hotel_reviews <- smartbind(tidy_M_hotel_neg_reviews, tidy_M_hotel_pos_reviews)
+  
+#arrange words from Milan hotel reviews in decending order
+tidy_M_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from Milan hotel reviews
+data("stop_words")
+tidy_M_hotel_reviews <- tidy_M_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from Milan hotel reviews
+tidy_M_hotel_reviews$word <- gsub("\\s+","",tidy_M_hotel_reviews$word)
+
+#remove numbers from Milan hotel reviews
+tidy_M_hotel_reviews <-tidy_M_hotel_reviews[-grep("\\b\\d+\\b", tidy_M_hotel_reviews$word),]
+
+#stem words from Milan hotel reviews
+tidy_M_hotel_reviews <-tidy_M_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from Milan hotel reviews
+M_hotel_wordcount <- tidy_M_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+M_hotel_top50 <- M_hotel_wordcount[seq(1,50,by=1),]
+M_hotel_top50$word <- as.factor(M_hotel_top50$word)
+
+
+#plot top words
+ggplot(M_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in Milan Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#Paris
+
+```{r Paris}
+
+#restaruant reviews for Paris
+P_hotel_reviews <- Paris_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+P_hotel_reviews$Negative_Review[grep("No Negative", P_hotel_reviews$Negative_Review)] <- NA
+P_hotel_reviews$Positive_Review[grep("No Positive", P_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for Paris negative hotel reviews
+tidy_P_hotel_neg_reviews <- P_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for Paris positive hotel reviews
+tidy_P_hotel_pos_reviews <- P_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_P_hotel_reviews <- smartbind(tidy_P_hotel_neg_reviews, tidy_P_hotel_pos_reviews)
+  
+#arrange words from Paris hotel reviews in decending order
+tidy_P_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from Paris hotel reviews
+data("stop_words")
+tidy_P_hotel_reviews <- tidy_P_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from Paris hotel reviews
+tidy_P_hotel_reviews$word <- gsub("\\s+","",tidy_P_hotel_reviews$word)
+
+#remove numbers from Paris hotel reviews
+tidy_P_hotel_reviews <-tidy_P_hotel_reviews[-grep("\\b\\d+\\b", tidy_P_hotel_reviews$word),]
+
+#stem words from Paris hotel reviews
+tidy_P_hotel_reviews <-tidy_P_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from Paris hotel reviews
+P_hotel_wordcount <- tidy_P_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+P_hotel_top50 <- P_hotel_wordcount[seq(1,50,by=1),]
+P_hotel_top50$word <- as.factor(P_hotel_top50$word)
+
+
+#plot top words
+ggplot(P_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in Paris Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+
+#Vienna
+
+```{r Vienna}
+
+#restaruant reviews for Vienna
+V_hotel_reviews <- Vienna_hotel[,c(7, 10, 18)]
+
+#Remove no negative/no positive placeholders
+V_hotel_reviews$Negative_Review[grep("No Negative", V_hotel_reviews$Negative_Review)] <- NA
+V_hotel_reviews$Positive_Review[grep("No Positive", V_hotel_reviews$Negative_Review)] <- NA
+
+#create a tidy text data frame for Vienna negative hotel reviews
+tidy_V_hotel_neg_reviews <- V_hotel_reviews %>%
+  select(X, Negative_Review) %>%
+  unnest_tokens(word, Negative_Review) %>%
+  drop_na(word)
+
+#create tidy text data frame for Vienna positive hotel reviews
+tidy_V_hotel_pos_reviews <- V_hotel_reviews %>%
+  select(X, Positive_Review) %>%
+  unnest_tokens(word, Positive_Review) %>%
+  drop_na(word)
+
+#combine positive and negative review tidy text data frames
+tidy_V_hotel_reviews <- smartbind(tidy_V_hotel_neg_reviews, tidy_V_hotel_pos_reviews)
+  
+#arrange words from Vienna hotel reviews in decending order
+tidy_V_hotel_reviews %>%
+  count(word) %>%
+  arrange(desc(n))
+
+#remove stop words from Vienna hotel reviews
+data("stop_words")
+tidy_V_hotel_reviews <- tidy_V_hotel_reviews %>%
+  anti_join(stop_words)
+
+#remove white space from Vienna hotel reviews
+tidy_V_hotel_reviews$word <- gsub("\\s+","",tidy_V_hotel_reviews$word)
+
+#remove numbers from Vienna hotel reviews
+tidy_V_hotel_reviews <-tidy_V_hotel_reviews[-grep("\\b\\d+\\b", tidy_V_hotel_reviews$word),]
+
+#stem words from Vienna hotel reviews
+tidy_V_hotel_reviews <-tidy_V_hotel_reviews %>%
+  mutate_at("word", funs(wordStem((.), language="en")))
+
+#get most common words from Vienna hotel reviews
+V_hotel_wordcount <- tidy_V_hotel_reviews %>%
+  count(word, sort=TRUE)
+
+#limit to 50 words
+V_hotel_top50 <- V_hotel_wordcount[seq(1,50,by=1),]
+V_hotel_top50$word <- as.factor(V_hotel_top50$word)
+
+
+#plot top words
+ggplot(V_hotel_top50, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Word Appears in Vienna Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
