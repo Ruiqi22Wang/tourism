@@ -103,7 +103,7 @@ tidy_A_hotel_reviews <-tidy_A_hotel_reviews %>%
 #limit to 20 words
 A_hotel_top20 <- tidy_A_hotel_reviews[1:20,]
 A_hotel_top20$one <- as.factor(A_hotel_top20$one)
-A_hotel_top20$one <- as.factor(A_hotel_top20$one)
+A_hotel_top20$two <- as.factor(A_hotel_top20$two)
 A_hotel_top20$words <- paste(A_hotel_top20$one, A_hotel_top20$two, sep=" ")
 
 #plot top words
@@ -169,7 +169,7 @@ tidy_B_hotel_reviews <-tidy_B_hotel_reviews %>%
 #limit to 20 words
 B_hotel_top20 <- tidy_B_hotel_reviews[1:20,]
 B_hotel_top20$one <- as.factor(B_hotel_top20$one)
-B_hotel_top20$one <- as.factor(B_hotel_top20$one)
+B_hotel_top20$two <- as.factor(B_hotel_top20$two)
 B_hotel_top20$words <- paste(B_hotel_top20$one, B_hotel_top20$two, sep=" ")
 
 #plot top words
@@ -235,7 +235,7 @@ tidy_L_hotel_reviews <-tidy_L_hotel_reviews %>%
 #limit to 20 words
 L_hotel_top20 <- tidy_L_hotel_reviews[1:20,]
 L_hotel_top20$one <- as.factor(L_hotel_top20$one)
-L_hotel_top20$one <- as.factor(L_hotel_top20$one)
+L_hotel_top20$two <- as.factor(L_hotel_top20$two)
 L_hotel_top20$words <- paste(L_hotel_top20$one, L_hotel_top20$two, sep=" ")
 
 #plot top words
@@ -302,7 +302,7 @@ tidy_M_hotel_reviews <-tidy_M_hotel_reviews %>%
 #limit to 20 words
 M_hotel_top20 <- tidy_M_hotel_reviews[1:20,]
 M_hotel_top20$one <- as.factor(M_hotel_top20$one)
-M_hotel_top20$one <- as.factor(M_hotel_top20$one)
+M_hotel_top20$two <- as.factor(M_hotel_top20$two)
 M_hotel_top20$words <- paste(M_hotel_top20$one, M_hotel_top20$two, sep=" ")
 
 #plot top words
@@ -368,7 +368,7 @@ tidy_P_hotel_reviews <-tidy_P_hotel_reviews %>%
 #limit to 20 words
 P_hotel_top20 <- tidy_P_hotel_reviews[1:20,]
 P_hotel_top20$one <- as.factor(P_hotel_top20$one)
-P_hotel_top20$one <- as.factor(P_hotel_top20$one)
+P_hotel_top20$two <- as.factor(P_hotel_top20$two)
 P_hotel_top20$words <- paste(P_hotel_top20$one, P_hotel_top20$two, sep=" ")
 
 #plot top words
@@ -435,7 +435,7 @@ tidy_V_hotel_reviews <-tidy_V_hotel_reviews %>%
 #limit to 20 words
 V_hotel_top20 <- tidy_V_hotel_reviews[1:20,]
 V_hotel_top20$one <- as.factor(V_hotel_top20$one)
-V_hotel_top20$one <- as.factor(V_hotel_top20$one)
+V_hotel_top20$two <- as.factor(V_hotel_top20$two)
 V_hotel_top20$words <- paste(V_hotel_top20$one, V_hotel_top20$two, sep=" ")
 
 #plot top words
