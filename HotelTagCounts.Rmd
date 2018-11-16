@@ -1,0 +1,269 @@
+---
+title: "HotelTagCounts"
+author: "Kirsten Mead"
+date: "11/16/2018"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+setwd("~/Desktop/703 Project")
+
+library(gridExtra)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
+library(gtools)
+library(ggplot2)
+library(SnowballC)
+
+```
+
+
+#Data
+
+```{r hotel data}
+
+#read in hotel data
+hotels <- read.csv('Hotel_Reviews.csv', stringsAsFactors = FALSE)
+
+#make unique identifier for each review
+hotels$X <- seq(1:515738)
+
+#separate data frames for hotels in each city
+hotels$City <- ''
+hotels$City[grepl("Amsterdam Netherlands", hotels$Hotel_Address)] <- 'Amsterdam'
+hotels$City[grepl("Milan Italy", hotels$Hotel_Address)] <- 'Milan'
+hotels$City[grepl("United Kingdom", hotels$Hotel_Address)] <- 'London'
+hotels$City[grepl("Barcelona Spain", hotels$Hotel_Address)] <- 'Barcelona'
+hotels$City[grepl("Vienna Austria", hotels$Hotel_Address)] <- 'Vienna'
+hotels$City[grepl("Paris France", hotels$Hotel_Address)] <- 'Paris'
+
+#make a new column for city
+Amsterdam_hotel <- hotels[hotels$City == "Amsterdam",] 
+Paris_hotel <- hotels[hotels$City == 'Paris',]
+Vienna_hotel <- hotels[hotels$City == 'Vienna',]
+London_hotel <- hotels[hotels$City == 'London',]
+Barcelona_hotel <- hotels[hotels$City == 'Barcelona',]
+Milan_hotel <- hotels[hotels$City == 'Milan',]
+
+```
+
+
+#Amsterdam 
+
+```{r Amsterdam}
+
+#hotel tags for Amsterdam
+A_hotel_tags <- Amsterdam_hotel[,c(14, 18)]
+
+#create a tidy text data frame for Amsterdam tags
+tidy_A_hotel_tags <- A_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_A_hotel_tags <- tidy_A_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_A_hotel_tags <-tidy_A_hotel_tags[-grep(",", tidy_A_hotel_tags$word),]
+tidy_A_hotel_tags <-tidy_A_hotel_tags[-grep("\\[", tidy_A_hotel_tags$word),]
+tidy_A_hotel_tags <-tidy_A_hotel_tags[-grep("\\]", tidy_A_hotel_tags$word),]
+
+#limit to 20 tags
+A_hotel_toptags <- tidy_A_hotel_tags[1:20,]
+A_hotel_toptags$word <- as.factor(A_hotel_toptags$word)
+
+#plot top words
+ggplot(A_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in Amsterdam Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#Barcelona
+
+```{r Barcelona}
+
+#hotel tags for Barcelona
+B_hotel_tags <- Barcelona_hotel[,c(14, 18)]
+
+#create a tidy text data frame for Barcelona tags
+tidy_B_hotel_tags <- B_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_B_hotel_tags <- tidy_B_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_B_hotel_tags <-tidy_B_hotel_tags[-grep(",", tidy_B_hotel_tags$word),]
+tidy_B_hotel_tags <-tidy_B_hotel_tags[-grep("\\[", tidy_B_hotel_tags$word),]
+tidy_B_hotel_tags <-tidy_B_hotel_tags[-grep("\\]", tidy_B_hotel_tags$word),]
+
+#limit to 20 tags
+B_hotel_toptags <- tidy_B_hotel_tags[1:20,]
+B_hotel_toptags$word <- as.factor(B_hotel_toptags$word)
+
+#plot top words
+ggplot(B_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in Barcelona Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#London
+
+```{r London}
+
+#hotel tags for London
+L_hotel_tags <- London_hotel[,c(14, 18)]
+
+#create a tidy text data frame for London tags
+tidy_L_hotel_tags <- L_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_L_hotel_tags <- tidy_L_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_L_hotel_tags <-tidy_L_hotel_tags[-grep(",", tidy_L_hotel_tags$word),]
+tidy_L_hotel_tags <-tidy_L_hotel_tags[-grep("\\[", tidy_L_hotel_tags$word),]
+tidy_L_hotel_tags <-tidy_L_hotel_tags[-grep("\\]", tidy_L_hotel_tags$word),]
+
+#limit to 20 tags
+L_hotel_toptags <- tidy_L_hotel_tags[1:20,]
+L_hotel_toptags$word <- as.factor(L_hotel_toptags$word)
+
+#plot top words
+ggplot(L_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in London Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+
+#Milan
+
+```{r Milan}
+
+#hotel tags for Milan
+M_hotel_tags <- Milan_hotel[,c(14, 18)]
+
+#create a tidy text data frame for Milan tags
+tidy_M_hotel_tags <- M_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_M_hotel_tags <- tidy_M_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_M_hotel_tags <-tidy_M_hotel_tags[-grep(",", tidy_M_hotel_tags$word),]
+tidy_M_hotel_tags <-tidy_M_hotel_tags[-grep("\\[", tidy_M_hotel_tags$word),]
+tidy_M_hotel_tags <-tidy_M_hotel_tags[-grep("\\]", tidy_M_hotel_tags$word),]
+
+#limit to 20 tags
+M_hotel_toptags <- tidy_M_hotel_tags[1:20,]
+M_hotel_toptags$word <- as.factor(M_hotel_toptags$word)
+
+#plot top words
+ggplot(M_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in Milan Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+#Paris
+
+```{r Paris}
+
+#hotel tags for Paris
+P_hotel_tags <- Paris_hotel[,c(14, 18)]
+
+#create a tidy text data frame for Paris tags
+tidy_P_hotel_tags <- P_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_P_hotel_tags <- tidy_P_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_P_hotel_tags <-tidy_P_hotel_tags[-grep(",", tidy_P_hotel_tags$word),]
+tidy_P_hotel_tags <-tidy_P_hotel_tags[-grep("\\[", tidy_P_hotel_tags$word),]
+tidy_P_hotel_tags <-tidy_P_hotel_tags[-grep("\\]", tidy_P_hotel_tags$word),]
+
+#limit to 20 tags
+P_hotel_toptags <- tidy_P_hotel_tags[1:20,]
+P_hotel_toptags$word <- as.factor(P_hotel_toptags$word)
+
+#plot top words
+ggplot(P_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in Paris Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
+
+
+#Vienna
+
+```{r Vienna}
+
+#hotel tags for Vienna
+V_hotel_tags <- Vienna_hotel[,c(14, 18)]
+
+#create a tidy text data frame for Vienna tags
+tidy_V_hotel_tags <- V_hotel_tags %>%
+  select(X, Tags) %>%
+  unnest_tokens(word, Tags, token = stringr::str_split, pattern = "'")
+
+#count
+tidy_V_hotel_tags <- tidy_V_hotel_tags %>%
+  count(word, sort = TRUE)
+
+#remove punctuation
+tidy_V_hotel_tags <-tidy_V_hotel_tags[-grep(",", tidy_V_hotel_tags$word),]
+tidy_V_hotel_tags <-tidy_V_hotel_tags[-grep("\\[", tidy_V_hotel_tags$word),]
+tidy_V_hotel_tags <-tidy_V_hotel_tags[-grep("\\]", tidy_V_hotel_tags$word),]
+
+#limit to 20 tags
+V_hotel_toptags <- tidy_V_hotel_tags[1:20,]
+V_hotel_toptags$word <- as.factor(V_hotel_toptags$word)
+
+#plot top words
+ggplot(V_hotel_toptags, aes(x=reorder(word, n), y=n, fill=word))+
+  geom_bar(stat="identity")+
+  theme_minimal()+
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))+
+  ylab("Number of Times Tag Appear in Vienna Hotel Reviews")+
+  xlab("")+
+  guides(fill=FALSE) + coord_flip()
+
+```
