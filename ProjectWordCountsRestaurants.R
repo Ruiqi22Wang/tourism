@@ -5,6 +5,8 @@ library(tidytext)
 library(dplyr)
 library(gtools)
 library(ggplot2)
+library(wordcloud)
+library(RColorBrewer)
 
 restaurants <- read.csv('TA_restaurants_curated.csv')
 
@@ -50,6 +52,12 @@ tidy_A_rest_reviews$word <- gsub("\\s+","",tidy_A_rest_reviews$word)
 #remove numbers from Amsterdam restaurant reviews
 tidy_A_rest_reviews <-tidy_A_rest_reviews[-grep("\\b\\d+\\b", tidy_A_rest_reviews$word),]
 
+#wordcloud
+tidy_A_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
+
 #stem words from Amsterdam restaurant reviews
 library(SnowballC)
 tidy_A_rest_reviews <-tidy_A_rest_reviews %>%
@@ -62,7 +70,6 @@ A_rest_wordcount <- tidy_A_rest_reviews %>%
 #limit to 50 words
 A_rest_top50 <- A_rest_wordcount[seq(1,50,by=1),]
 A_rest_top50$word <- as.factor(A_rest_top50$word)
-
 
 #plot top words
 ggplot(A_rest_top50, aes(x=reorder(word, n), y=n, fill=word))+
@@ -99,6 +106,12 @@ tidy_B_rest_reviews$word <- gsub("\\s+","",tidy_B_rest_reviews$word)
 
 #remove numbers from Barcelona restaurant reviews
 tidy_B_rest_reviews <-tidy_B_rest_reviews[-grep("\\b\\d+\\b", tidy_B_rest_reviews$word),]
+
+#wordcloud
+tidy_B_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
 
 #stem words from Barcelona restaurant reviews
 library(SnowballC)
@@ -149,6 +162,12 @@ tidy_L_rest_reviews$word <- gsub("\\s+","",tidy_L_rest_reviews$word)
 #remove numbers from London restaurant reviews
 tidy_L_rest_reviews <-tidy_L_rest_reviews[-grep("\\b\\d+\\b", tidy_L_rest_reviews$word),]
 
+#wordcloud
+tidy_L_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=50, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
+
 #stem words from London restaurant reviews
 library(SnowballC)
 tidy_L_rest_reviews <-tidy_L_rest_reviews %>%
@@ -197,6 +216,12 @@ tidy_M_rest_reviews$word <- gsub("\\s+","",tidy_M_rest_reviews$word)
 
 #remove numbers from Milan restaurant reviews
 tidy_M_rest_reviews <-tidy_M_rest_reviews[-grep("\\b\\d+\\b", tidy_M_rest_reviews$word),]
+
+#wordcloud
+tidy_M_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
 
 #stem words from Milan restaurant reviews
 library(SnowballC)
@@ -248,6 +273,12 @@ tidy_P_rest_reviews$word <- gsub("\\s+","",tidy_P_rest_reviews$word)
 #remove numbers from Paris restaurant reviews
 tidy_P_rest_reviews <-tidy_P_rest_reviews[-grep("\\b\\d+\\b", tidy_P_rest_reviews$word),]
 
+#wordcloud
+tidy_P_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=50, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
+
 #stem words from Paris restaurant reviews
 library(SnowballC)
 tidy_P_rest_reviews <-tidy_P_rest_reviews %>%
@@ -296,6 +327,12 @@ tidy_V_rest_reviews$word <- gsub("\\s+","",tidy_V_rest_reviews$word)
 
 #remove numbers from Vienna restaurant reviews
 tidy_V_rest_reviews <-tidy_V_rest_reviews[-grep("\\b\\d+\\b", tidy_V_rest_reviews$word),]
+
+#wordcloud
+tidy_V_rest_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6,"Set1")))
 
 #stem words from Vienna restaurant reviews
 library(SnowballC)
@@ -360,6 +397,11 @@ ggplot(A_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   xlab("")+
   guides(fill=FALSE) + coord_flip()
 
+#wordcloud of cuisines
+A_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
+
 
 #Barcelona
 Barcelona_rest$Cuisine.Style <- as.character(Barcelona_rest$Cuisine.Style)
@@ -394,7 +436,10 @@ ggplot(B_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   xlab("")+
   guides(fill=FALSE) + coord_flip()
 
-
+#wordcloud of cuisines
+B_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
 
 #London
 London_rest$Cuisine.Style <- as.character(London_rest$Cuisine.Style)
@@ -429,6 +474,10 @@ ggplot(L_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   xlab("")+
   guides(fill=FALSE) + coord_flip()
 
+#wordcloud of cuisines
+L_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
 
 
 #Milan
@@ -463,6 +512,11 @@ ggplot(M_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   ylab("Milan Cuisines")+
   xlab("")+
   guides(fill=FALSE) + coord_flip()
+
+#wordcloud of cuisines
+M_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
 
 
 
@@ -499,6 +553,11 @@ ggplot(P_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   xlab("")+
   guides(fill=FALSE) + coord_flip()
 
+#wordcloud of cuisines
+P_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
+
 
 
 #Vienna
@@ -533,5 +592,10 @@ ggplot(V_cuisine_count[seq(1,25, by=1),], aes(x=reorder(word, n), y=n, fill=word
   ylab("Vienna Cuisines")+
   xlab("")+
   guides(fill=FALSE) + coord_flip()
+
+#wordcloud of cuisines
+V_cuisine_count %>%
+  with(wordcloud(word, n, min.freq=20, random.order = FALSE,
+                 colors = brewer.pal(6, "Spectral")))
 
 
