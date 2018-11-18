@@ -17,6 +17,8 @@ library(ggplot2)
 library(stringr)
 library(tidyr)
 library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
 
 ```
 
@@ -74,6 +76,12 @@ tidy_A_rest_reviews <-tidy_A_rest_reviews[-grep("\\b\\d+\\b", tidy_A_rest_review
 tidy_A_rest_reviews <-tidy_A_rest_reviews[-grep("\\b\\d+\\b", tidy_A_rest_reviews$two),]
 tidy_A_rest_reviews <- tidy_A_rest_reviews[-1,]
 
+#wordcloud
+tidy_A_rest_reviews$words <- paste(tidy_A_rest_reviews$one, tidy_A_rest_reviews$two, sep= " ")
+tidy_A_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 8, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
+
 #stem words from Amsterdam restaurant reviews
 tidy_A_rest_reviews <-tidy_A_rest_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en")))
@@ -127,6 +135,12 @@ tidy_B_rest_reviews$two <- gsub("\\s+","",tidy_B_rest_reviews$two)
 tidy_B_rest_reviews <-tidy_B_rest_reviews[-grep("\\b\\d+\\b", tidy_B_rest_reviews$one),]
 tidy_B_rest_reviews <-tidy_B_rest_reviews[-grep("\\b\\d+\\b", tidy_B_rest_reviews$two),]
 tidy_B_rest_reviews <- tidy_B_rest_reviews[-1,]
+
+#wordcloud
+tidy_B_rest_reviews$words <- paste(tidy_B_rest_reviews$one, tidy_B_rest_reviews$two, sep= " ")
+tidy_B_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 15, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
 
 #stem words from Barcelona restaurant reviews
 tidy_B_rest_reviews <-tidy_B_rest_reviews %>%
@@ -185,6 +199,12 @@ tidy_L_rest_reviews <-tidy_L_rest_reviews[-grep("\\b\\d+\\b", tidy_L_rest_review
 tidy_L_rest_reviews <-tidy_L_rest_reviews[-grep("\\b\\d+\\b", tidy_L_rest_reviews$two),]
 tidy_L_rest_reviews <- tidy_L_rest_reviews[-1,]
 
+#wordcloud
+tidy_L_rest_reviews$words <- paste(tidy_L_rest_reviews$one, tidy_L_rest_reviews$two, sep= " ")
+tidy_L_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 30, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
+
 #stem words from London restaurant reviews
 tidy_L_rest_reviews <-tidy_L_rest_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en")))
@@ -242,6 +262,12 @@ tidy_M_rest_reviews <-tidy_M_rest_reviews[-grep("\\b\\d+\\b", tidy_M_rest_review
 tidy_M_rest_reviews <-tidy_M_rest_reviews[-grep("\\b\\d+\\b", tidy_M_rest_reviews$two),]
 tidy_M_rest_reviews <- tidy_M_rest_reviews[-1,]
 
+#wordcloud
+tidy_M_rest_reviews$words <- paste(tidy_M_rest_reviews$one, tidy_M_rest_reviews$two, sep= " ")
+tidy_M_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 12, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
+
 #stem words from Milan restaurant reviews
 tidy_M_rest_reviews <-tidy_M_rest_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en")))
@@ -298,6 +324,12 @@ tidy_P_rest_reviews <-tidy_P_rest_reviews[-grep("\\b\\d+\\b", tidy_P_rest_review
 tidy_P_rest_reviews <-tidy_P_rest_reviews[-grep("\\b\\d+\\b", tidy_P_rest_reviews$two),]
 tidy_P_rest_reviews <- tidy_P_rest_reviews[-1,]
 
+#wordcloud
+tidy_P_rest_reviews$words <- paste(tidy_P_rest_reviews$one, tidy_P_rest_reviews$two, sep= " ")
+tidy_P_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 25, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
+
 #stem words from Paris restaurant reviews
 tidy_P_rest_reviews <-tidy_P_rest_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en")))
@@ -352,6 +384,12 @@ tidy_V_rest_reviews$two <- gsub("\\s+","",tidy_V_rest_reviews$two)
 #remove numbers from Vienna restaurant reviews
 tidy_V_rest_reviews <-tidy_V_rest_reviews[-grep("\\b\\d+\\b", tidy_V_rest_reviews$one),]
 tidy_V_rest_reviews <-tidy_V_rest_reviews[-grep("\\b\\d+\\b", tidy_V_rest_reviews$two),]
+
+#wordcloud
+tidy_V_rest_reviews$words <- paste(tidy_V_rest_reviews$one, tidy_V_rest_reviews$two, sep= " ")
+tidy_V_rest_reviews %>%
+  with(wordcloud(words, n, min.freq = 8, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Paired")))
 
 #stem words from Vienna restaurant reviews
 tidy_V_rest_reviews <-tidy_V_rest_reviews %>%
