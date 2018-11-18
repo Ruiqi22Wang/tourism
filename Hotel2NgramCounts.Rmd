@@ -16,6 +16,8 @@ library(dplyr)
 library(gtools)
 library(ggplot2)
 library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
 
 ```
 
@@ -94,6 +96,12 @@ tidy_A_hotel_reviews$two <- gsub("\\s+","",tidy_A_hotel_reviews$two)
 tidy_A_hotel_reviews <-tidy_A_hotel_reviews[-grep("\\b\\d+\\b", tidy_A_hotel_reviews$one),]
 tidy_A_hotel_reviews <-tidy_A_hotel_reviews[-grep("\\b\\d+\\b", tidy_A_hotel_reviews$two),]
 
+#wordcloud
+tidy_A_hotel_reviews$words <- paste(tidy_A_hotel_reviews$one, tidy_A_hotel_reviews$two, sep= " ")
+tidy_A_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 300, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
+
 #stem words from Amsterdam hotel reviews
 tidy_A_hotel_reviews <-tidy_A_hotel_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en")))
@@ -161,6 +169,12 @@ tidy_B_hotel_reviews$two <- gsub("\\s+","",tidy_B_hotel_reviews$two)
 tidy_B_hotel_reviews <-tidy_B_hotel_reviews[-grep("\\b\\d+\\b", tidy_B_hotel_reviews$one),]
 tidy_B_hotel_reviews <-tidy_B_hotel_reviews[-grep("\\b\\d+\\b", tidy_B_hotel_reviews$two),]
 
+#wordcloud
+tidy_B_hotel_reviews$words <- paste(tidy_B_hotel_reviews$one, tidy_B_hotel_reviews$two, sep= " ")
+tidy_B_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 300, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
+
 #stem words from Barcelona hotel reviews
 tidy_B_hotel_reviews <-tidy_B_hotel_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en"))) %>%
@@ -226,6 +240,12 @@ tidy_L_hotel_reviews$two <- gsub("\\s+","",tidy_L_hotel_reviews$two)
 #remove numbers from London hotel reviews
 tidy_L_hotel_reviews <-tidy_L_hotel_reviews[-grep("\\b\\d+\\b", tidy_L_hotel_reviews$one),]
 tidy_L_hotel_reviews <-tidy_L_hotel_reviews[-grep("\\b\\d+\\b", tidy_L_hotel_reviews$two),]
+
+#wordcloud
+tidy_L_hotel_reviews$words <- paste(tidy_L_hotel_reviews$one, tidy_L_hotel_reviews$two, sep= " ")
+tidy_L_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 800, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
 
 #stem words from London hotel reviews
 tidy_L_hotel_reviews <-tidy_L_hotel_reviews %>%
@@ -294,6 +314,12 @@ tidy_M_hotel_reviews$two <- gsub("\\s+","",tidy_M_hotel_reviews$two)
 tidy_M_hotel_reviews <-tidy_M_hotel_reviews[-grep("\\b\\d+\\b", tidy_M_hotel_reviews$one),]
 tidy_M_hotel_reviews <-tidy_M_hotel_reviews[-grep("\\b\\d+\\b", tidy_M_hotel_reviews$two),]
 
+#wordcloud
+tidy_M_hotel_reviews$words <- paste(tidy_M_hotel_reviews$one, tidy_M_hotel_reviews$two, sep= " ")
+tidy_M_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 250, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
+
 #stem words from Milan hotel reviews
 tidy_M_hotel_reviews <-tidy_M_hotel_reviews %>%
   mutate_at("one", funs(wordStem((.), language="en"))) %>%
@@ -359,6 +385,12 @@ tidy_P_hotel_reviews$two <- gsub("\\s+","",tidy_P_hotel_reviews$two)
 #remove numbers from Paris hotel reviews
 tidy_P_hotel_reviews <-tidy_P_hotel_reviews[-grep("\\b\\d+\\b", tidy_P_hotel_reviews$one),]
 tidy_P_hotel_reviews <-tidy_P_hotel_reviews[-grep("\\b\\d+\\b", tidy_P_hotel_reviews$two),]
+
+#wordcloud
+tidy_P_hotel_reviews$words <- paste(tidy_P_hotel_reviews$one, tidy_P_hotel_reviews$two, sep= " ")
+tidy_P_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 300, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
 
 #stem words from Paris hotel reviews
 tidy_P_hotel_reviews <-tidy_P_hotel_reviews %>%
@@ -426,6 +458,12 @@ tidy_V_hotel_reviews$two <- gsub("\\s+","",tidy_V_hotel_reviews$two)
 #remove numbers from Vienna hotel reviews
 tidy_V_hotel_reviews <-tidy_V_hotel_reviews[-grep("\\b\\d+\\b", tidy_V_hotel_reviews$one),]
 tidy_V_hotel_reviews <-tidy_V_hotel_reviews[-grep("\\b\\d+\\b", tidy_V_hotel_reviews$two),]
+
+#wordcloud
+tidy_V_hotel_reviews$words <- paste(tidy_V_hotel_reviews$one, tidy_V_hotel_reviews$two, sep= " ")
+tidy_V_hotel_reviews %>%
+  with(wordcloud(words, n, min.freq = 300, random.order = FALSE, scale=c(2.5, 0.3),
+                 colors = brewer.pal(8,"Dark2")))
 
 #stem words from Vienna hotel reviews
 tidy_V_hotel_reviews <-tidy_V_hotel_reviews %>%
