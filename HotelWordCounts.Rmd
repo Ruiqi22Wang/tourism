@@ -16,6 +16,8 @@ library(dplyr)
 library(gtools)
 library(ggplot2)
 library(SnowballC)
+library(wordcloud)
+library(RColorBrewer)
 
 ```
 
@@ -93,6 +95,12 @@ tidy_A_hotel_reviews$word <- gsub("\\s+","",tidy_A_hotel_reviews$word)
 #remove numbers from Amsterdam hotel reviews
 tidy_A_hotel_reviews <-tidy_A_hotel_reviews[-grep("\\b\\d+\\b", tidy_A_hotel_reviews$word),]
 
+#wordcloud
+tidy_A_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=1000, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
+
 #stem words from Amsterdam hotel reviews
 tidy_A_hotel_reviews <-tidy_A_hotel_reviews %>%
   mutate_at("word", funs(wordStem((.), language="en")))
@@ -159,6 +167,12 @@ tidy_B_hotel_reviews$word <- gsub("\\s+","",tidy_B_hotel_reviews$word)
 #remove numbers from Barcelona hotel reviews
 tidy_B_hotel_reviews <-tidy_B_hotel_reviews[-grep("\\b\\d+\\b", tidy_B_hotel_reviews$word),]
 
+#wordcloud
+tidy_B_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=1000, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
+
 #stem words from Barcelona hotel reviews
 tidy_B_hotel_reviews <-tidy_B_hotel_reviews %>%
   mutate_at("word", funs(wordStem((.), language="en")))
@@ -224,6 +238,12 @@ tidy_L_hotel_reviews$word <- gsub("\\s+","",tidy_L_hotel_reviews$word)
 
 #remove numbers from London hotel reviews
 tidy_L_hotel_reviews <-tidy_L_hotel_reviews[-grep("\\b\\d+\\b", tidy_L_hotel_reviews$word),]
+
+#wordcloud
+tidy_L_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=2000, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
 
 #stem words from London hotel reviews
 tidy_L_hotel_reviews <-tidy_L_hotel_reviews %>%
@@ -292,6 +312,12 @@ tidy_M_hotel_reviews$word <- gsub("\\s+","",tidy_M_hotel_reviews$word)
 #remove numbers from Milan hotel reviews
 tidy_M_hotel_reviews <-tidy_M_hotel_reviews[-grep("\\b\\d+\\b", tidy_M_hotel_reviews$word),]
 
+#wordcloud
+tidy_M_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=750, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
+
 #stem words from Milan hotel reviews
 tidy_M_hotel_reviews <-tidy_M_hotel_reviews %>%
   mutate_at("word", funs(wordStem((.), language="en")))
@@ -357,6 +383,12 @@ tidy_P_hotel_reviews$word <- gsub("\\s+","",tidy_P_hotel_reviews$word)
 
 #remove numbers from Paris hotel reviews
 tidy_P_hotel_reviews <-tidy_P_hotel_reviews[-grep("\\b\\d+\\b", tidy_P_hotel_reviews$word),]
+
+#wordcloud
+tidy_P_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=1000, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
 
 #stem words from Paris hotel reviews
 tidy_P_hotel_reviews <-tidy_P_hotel_reviews %>%
@@ -424,6 +456,12 @@ tidy_V_hotel_reviews$word <- gsub("\\s+","",tidy_V_hotel_reviews$word)
 
 #remove numbers from Vienna hotel reviews
 tidy_V_hotel_reviews <-tidy_V_hotel_reviews[-grep("\\b\\d+\\b", tidy_V_hotel_reviews$word),]
+
+#wordcloud
+tidy_V_hotel_reviews %>%
+  count(word) %>%
+  with(wordcloud(word, n, min.freq=750, random.order = FALSE,
+                 colors = brewer.pal(8,"Set2")))
 
 #stem words from Vienna hotel reviews
 tidy_V_hotel_reviews <-tidy_V_hotel_reviews %>%
