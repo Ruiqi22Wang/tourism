@@ -3,6 +3,7 @@ library(tidyverse)
 library(tidytext)
 library(dplyr)
 library(lubridate)
+library(gridExtra)
 hotel = read_csv("Hotel_Reviews.csv")
 
 ## extract address and coordinates
@@ -94,7 +95,8 @@ for (city in unique(hotel$city)) {
   tidy_city_hotel = data.frame(Review_YearMonth = unique(tidy_city_hotel_pos$Review_YearMonth)
                                , pos_sent = pos_sent, neg_sent = neg_sent)
   tidy_city_hotel = tidy_city_hotel %>% left_join(num_month_review) %>%
-    mutate(Review_YearMonth = as.factor(Review_YearMonth))
+    mutate(Review_YearMonth = as.factor(Review_YearMonth)) %>%
+    mutate(city = city)
 
   city_sentiments = append(city_sentiments, list(tidy_city_hotel))
 }
@@ -105,7 +107,7 @@ plot_sentiments = function(sent_list, city_index) {
     geom_line(group = 1, aes(x = Review_YearMonth, y = (pos_sent / num)), colour = "green")+
     geom_line(group = 1, aes(x = Review_YearMonth, y = (neg_sent / num)), colour = "red")+
     theme_minimal()+
-    ylab("TODO")+
+    ylab(sent_list[[city_index]]$city[1])+
     xlab("Date")+
     theme(axis.text.x = element_text(angle = 90, hjust = 1))
   return(plot)
