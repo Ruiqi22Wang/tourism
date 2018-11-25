@@ -135,7 +135,7 @@ top10_all = hotels %>%
   head(10)
 
 # see the top 10 nationalities
-top10_overall
+top10_all
 
 # get top 50 words from each nationality
 #  1 United Kingdom           245246
